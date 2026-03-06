@@ -1,136 +1,138 @@
-import { FooterSectionProps } from '@/src/layout/footer/v2';
+import { FooterSectionProps } from "@/src/layout/footer/v2";
 import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-} from 'react-icons/fa6';
+} from "react-icons/fa6";
+
+const currentYear = new Date().getFullYear();
 
 export const footerSectionData: FooterSectionProps = {
   socialLinks: [
     {
       icon: <FaFacebookF />,
-      href: 'https://www.facebook.com/',
+      href: "https://www.facebook.com/",
     },
     {
       icon: <FaLinkedinIn />,
-      href: 'https://www.linkedin.com/',
+      href: "https://www.linkedin.com/",
     },
     {
       icon: <FaTwitter />,
-      href: 'https://twitter.com/',
+      href: "https://twitter.com/",
     },
     {
       icon: <FaInstagram />,
-      href: 'https://www.instagram.com/',
+      href: "https://www.instagram.com/",
     },
   ],
   columnOne: {
-    title: 'Quick Links',
+    title: "Quick Links",
     links: [
       {
-        label: 'Home',
-        href: '/',
+        label: "Home",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'About us',
-        href: '/about',
+        label: "About us",
+        href: "/about",
         openNewTab: false,
       },
       {
-        label: 'Services',
-        href: '/services',
+        label: "Services",
+        href: "/services",
         openNewTab: false,
       },
       {
-        label: 'Portfolio',
-        href: '/portfolio',
+        label: "Portfolio",
+        href: "/portfolio",
         openNewTab: false,
       },
       {
-        label: 'Blog',
-        href: '/blog',
+        label: "Blog",
+        href: "/blog",
         openNewTab: false,
       },
     ],
   },
   columnTwo: {
-    title: 'Service Links',
+    title: "Service Links",
     links: [
       {
-        label: 'Cloud services',
-        href: '/',
+        label: "Cloud services",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Backup solutions',
-        href: '/',
+        label: "Backup solutions",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Network security',
-        href: '/',
+        label: "Network security",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Monitoring',
-        href: '/',
+        label: "Monitoring",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'IT Consulting',
-        href: '/',
+        label: "IT Consulting",
+        href: "/",
         openNewTab: false,
       },
     ],
   },
 
   columnThree: {
-    title: 'Recent Blog',
+    title: "Recent Blog",
     blogs: [
       {
         image: {
-          src: '/assets/images/blog/blog-sm-1.jpg',
-          alt: 'We provide a range of IT solutions',
+          src: "/assets/images/blog/blog-sm-1.jpg",
+          alt: "We provide a range of IT solutions",
         },
-        title: 'We provide a range of IT solutions',
-        date: 'january 11, 2024',
-        slug: './blog-details',
+        title: "We provide a range of IT solutions",
+        date: "january 11, 2024",
+        slug: "./blog-details",
       },
       {
         image: {
-          src: '/assets/images/blog/blog-sm-2.jpg',
-          alt: 'IT solutions enhance efficiency',
+          src: "/assets/images/blog/blog-sm-2.jpg",
+          alt: "IT solutions enhance efficiency",
         },
-        title: 'IT solutions enhance efficiency',
-        date: 'january 11, 2024',
-        slug: './blog-details',
+        title: "IT solutions enhance efficiency",
+        date: "january 11, 2024",
+        slug: "./blog-details",
       },
     ],
   },
   columnFour: {
-    title: 'Contact Us',
-    phoneNumber: '+880 123 45 67 89',
-    mail: 'yourmail@gmail.com',
-    location: '1212, Lav Vegas, The Veg Street, USA',
+    title: "Contact Us",
+    phoneNumber: "+880 123 45 67 89",
+    mail: "yourmail@gmail.com",
+    location: "1212, Lav Vegas, The Veg Street, USA",
   },
   footerBottom: {
-    copyrightText: '© Yoursitename  2024 | All Rights Reserved',
+    copyrightText: `© Moshate Consulting (Pty) Ltd - ${currentYear} | All Rights Reserved`,
     links: [
       {
-        label: 'Trams & Condition',
-        href: '/',
+        label: "Trams & Condition",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Privacy Policy',
-        href: '/',
+        label: "Privacy Policy",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Contact Us',
-        href: '/',
+        label: "Contact Us",
+        href: "/",
         openNewTab: false,
       },
     ],

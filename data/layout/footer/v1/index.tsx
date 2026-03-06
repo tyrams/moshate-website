@@ -1,105 +1,107 @@
-import { FooterSectionProps } from '@/src/layout/footer/v1';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa6';
+import { FooterSectionProps } from "@/src/layout/footer/v1";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa6";
+
+const currentYear = new Date().getFullYear();
 
 export const footerSectionData: FooterSectionProps = {
   about: {
     description:
-      'Lorem Ipsum is simply is dumi omy is text Loremo Ipsum is simply is out no our o dummy text.',
+      "Lorem Ipsum is simply is dumi omy is text Loremo Ipsum is simply is out no our o dummy text.",
     socialLinks: [
       {
         icon: <FaFacebookF />,
-        href: 'https://www.facebook.com/',
+        href: "https://www.facebook.com/",
       },
       {
         icon: <FaTwitter />,
-        href: 'https://twitter.com/',
+        href: "https://twitter.com/",
       },
       {
         icon: <FaInstagram />,
-        href: 'https://www.instagram.com/',
+        href: "https://www.instagram.com/",
       },
     ],
   },
   columnOne: {
-    title: 'Get Free Link',
+    title: "Get Free Link",
     links: [
       {
-        label: 'Software Development',
-        href: '/',
+        label: "Software Development",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Data Analytics',
-        href: '/',
+        label: "Data Analytics",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'IT Consulting',
-        href: '/',
+        label: "IT Consulting",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'UI/UX Design',
-        href: '/',
+        label: "UI/UX Design",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Network Solutions',
-        href: '/',
+        label: "Network Solutions",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Others',
-        href: '/',
+        label: "Others",
+        href: "/",
         openNewTab: false,
       },
     ],
   },
   columnTwo: {
-    title: 'Address',
-    location: '2972 Westheimer Rd. Santa Ana, Illinois 85486 ',
-    mails: ['debbie.baker@example.com', 'nevaeh.simm@example.com'],
-    phoneNumbers: ['(405) 555-0128', '(629) 555-0129'],
+    title: "Address",
+    location: "2972 Westheimer Rd. Santa Ana, Illinois 85486 ",
+    mails: ["debbie.baker@example.com", "nevaeh.simm@example.com"],
+    phoneNumbers: ["(405) 555-0128", "(629) 555-0129"],
   },
   columnThree: {
-    title: 'Recent Blog',
+    title: "Recent Blog",
     blogs: [
       {
         image: {
-          src: '/assets/images/blog/blog-sm-1.jpg',
-          alt: 'We provide a range of IT solutions',
+          src: "/assets/images/blog/blog-sm-1.jpg",
+          alt: "We provide a range of IT solutions",
         },
-        title: 'We provide a range of IT solutions',
-        date: 'january 11, 2024',
-        slug: './blog-details',
+        title: "We provide a range of IT solutions",
+        date: "january 11, 2024",
+        slug: "./blog-details",
       },
       {
         image: {
-          src: '/assets/images/blog/blog-sm-2.jpg',
-          alt: 'IT solutions enhance efficiency',
+          src: "/assets/images/blog/blog-sm-2.jpg",
+          alt: "IT solutions enhance efficiency",
         },
-        title: 'IT solutions enhance efficiency',
-        date: 'january 11, 2024',
-        slug: './blog-details',
+        title: "IT solutions enhance efficiency",
+        date: "january 11, 2024",
+        slug: "./blog-details",
       },
     ],
   },
   footerBottom: {
-    copyrightText: '© Yoursitename  2024 | All Rights Reserved',
+    copyrightText: `© Moshate Consulting (Pty) Ltd - ${currentYear} | All Rights Reserved`,
     links: [
       {
-        label: 'Trams & Condition',
-        href: '/',
+        label: "Trams & Condition",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Privacy Policy',
-        href: '/',
+        label: "Privacy Policy",
+        href: "/",
         openNewTab: false,
       },
       {
-        label: 'Contact Us',
-        href: '/',
+        label: "Contact Us",
+        href: "/",
         openNewTab: false,
       },
     ],

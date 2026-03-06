@@ -41,6 +41,7 @@ export function Hero() {
       {items && items.length > 0 && (
         <Swiper
           effect="fade"
+          fadeEffect={{ crossFade: true }}
           loop
           speed={300}
           autoplay={{ delay: 3000 }}
@@ -60,12 +61,8 @@ export function Hero() {
 
                 <div
                   className={cn(
-                    "absolute inset-0 -z-1  bg-accent-700 bg-cover bg-no-repeat bg-blend-luminosity [background-position:top_center] [transform:scale(1)] [transition:7000ms_ease,opacity_1500ms_ease-in]",
+                    "absolute inset-0 -z-1 bg-cover bg-no-repeat [background-position:top_center] [transform:scale(1)] [transition:7000ms_ease,opacity_1500ms_ease-in]",
                     styles["hero-bg"],
-                    // before
-                    "before:absolute before:inset-0 before:bg-[#EDF8FE] before:opacity-80  dark:before:bg-accent-900",
-                    // after
-                    "after:absolute after:inset-0  after:[background:linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_100%)]  dark:after:[background:linear-gradient(180deg,rgba(20,20,22,0.00)_0%,#141416_100%)]",
                   )}
                   style={{ backgroundImage: `url(${item.image.src})` }}
                 />
