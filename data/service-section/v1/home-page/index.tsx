@@ -1,4 +1,4 @@
-import { ServiceSectionProps } from '@/src/sections/service/v1';
+import { ServiceSectionProps } from "@/src/sections/service/v1";
 
 function Icon1() {
   return (
@@ -45,27 +45,34 @@ function Icon3() {
 }
 
 export const serviceSectionData: ServiceSectionProps = {
+  sectionHeading: {
+    subtitle: "Services",
+    title: "Innovative Solutions for Your Business",
+    description:
+      "We provide cutting-edge ICT and management consulting services to help your business thrive in the digital age.",
+    alignment: "start",
+  },
   services: [
     {
       icon: <Icon1 />,
-      title: 'Strategy Design',
+      title: "Strategy Design",
       description:
-        'We empower businesses to strategise and plan, ensuring they are well-positioned for the future with tailored strategies that drive growth and resilience.',
-      slug: '/services',
+        "We empower businesses to strategise and plan, ensuring they are well-positioned for the future with tailored strategies that drive growth and resilience.",
+      slug: "/services",
     },
     {
       icon: <Icon2 />,
-      title: 'Digital Transformation',
+      title: "Digital Transformation",
       description:
-        'From digital strategy development to implementation, we help businesses adapt to the evolving digital landscape and stay ahead of the curve.',
-      slug: '/services',
+        "From digital strategy development to implementation, we help businesses adapt to the evolving digital landscape and stay ahead of the curve.",
+      slug: "/services",
     },
     {
       icon: <Icon3 />,
-      title: 'Project Management & Delivery',
+      title: "Project Management & Delivery",
       description:
-        'We specialise in establishing PMOs to ensure consistent project delivery, alongside Agile Project Management and Portfolio Management Implementation.',
-      slug: '/services',
+        "We specialise in establishing PMOs to ensure consistent project delivery, alongside Agile Project Management and Portfolio Management Implementation.",
+      slug: "/services",
     },
   ],
 };

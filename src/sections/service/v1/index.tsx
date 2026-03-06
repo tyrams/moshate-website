@@ -1,18 +1,30 @@
-import { Container } from '@/src/components/container';
-import { getStaggeredDelay } from '@/src/utils/set-staggered-delay';
-import { cn } from '@/src/utils/shadcn';
-import { ClassValue } from 'clsx';
-import { ServiceCard, ServiceProps } from 'src/components/cards/service/v1';
+import { Container } from "@/src/components/container";
+import { getStaggeredDelay } from "@/src/utils/set-staggered-delay";
+import { cn } from "@/src/utils/shadcn";
+import { ClassValue } from "clsx";
+import { ServiceCard, ServiceProps } from "src/components/cards/service/v1";
+import { SectionHeading } from "@/src/components/section-heading";
+import { SectionHeadingProps } from "@/src/components/section-heading/interface";
 
 export interface ServiceSectionProps {
+  sectionHeading?: SectionHeadingProps;
   services: ServiceProps[];
   className?: ClassValue;
 }
 
-export function ServiceSection({ services, className }: ServiceSectionProps) {
+export function ServiceSection({
+  sectionHeading,
+  services,
+  className,
+}: ServiceSectionProps) {
   return (
-    <section className={cn('section-padding-primary', className)}>
+    <section className={cn("section-padding-primary", className)}>
       <Container>
+        {sectionHeading && (
+          <div className="mb-10 md:mb-[3.75rem]" data-aos="fade-up">
+            <SectionHeading {...sectionHeading} />
+          </div>
+        )}
         {services && services.length > 0 && (
           <div className="-mx-4 flex flex-wrap justify-center gap-y-30px">
             {services.map((service, index) => (

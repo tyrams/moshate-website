@@ -15,7 +15,7 @@ export const headerWrapperClasses = cn(
 );
 
 export function MobileHeader() {
-  const { menuItems, contactInfo } = headerData;
+  const { menuItems } = headerData;
 
   return (
     <div className="relative block [--mobile-height:64px] lg:hidden">

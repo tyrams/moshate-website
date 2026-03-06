@@ -71,7 +71,7 @@ export function Hero() {
                   {/* Main content  */}
                   <div
                     className={cn(
-                      "relative z-10 mx-auto max-w-[800px] text-center text-accent-900 dark:text-white lg:mt-[60px]",
+                      "relative z-10 mx-auto max-w-[800px] text-center text-white lg:mt-[60px]",
                       styles["hero-content"],
                     )}
                   >

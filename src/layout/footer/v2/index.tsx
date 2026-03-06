@@ -1,21 +1,11 @@
-import { footerSectionData } from '@/data/layout/footer/v2';
-import { ImageProps, LinkProps, SectionProps } from '@/src/common-types';
-import { Container } from '@/src/components/container';
-import { CustomLink } from '@/src/components/custom-link';
-import { cn } from '@/src/utils/shadcn';
-import Image from 'next/image';
-import { BrandLogo } from 'src/layout/brand-logo';
-import { FaEnvelope, FaPhone } from 'react-icons/fa6';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import { FaCalendarDays } from 'react-icons/fa6';
-import { ClassValue } from 'clsx';
-
-interface RecentBlog {
-  slug: string;
-  image: Omit<ImageProps, 'width' | 'height'>;
-  date: string;
-  title: string;
-}
+import { footerSectionData } from "@/data/layout/footer/v2";
+import { LinkProps, SectionProps } from "@/src/common-types";
+import { Container } from "@/src/components/container";
+import { CustomLink } from "@/src/components/custom-link";
+import { cn } from "@/src/utils/shadcn";
+import { BrandLogo } from "src/layout/brand-logo";
+import { FaEnvelope } from "react-icons/fa6";
+import { ClassValue } from "clsx";
 
 interface SocialLinkProps {
   icon: React.ReactNode;
@@ -24,42 +14,33 @@ interface SocialLinkProps {
 
 export interface FooterSectionProps {
   socialLinks: SocialLinkProps[];
-  columnOne: {
+  quickLinks: {
     title: string;
     links: LinkProps[];
   };
-  columnTwo: {
+  services: {
     title: string;
     links: LinkProps[];
   };
-  columnThree: {
+  contact: {
     title: string;
-    blogs: RecentBlog[];
-  };
-  columnFour: {
-    title: string;
-    location: string;
-    mail: string;
-    phoneNumber: string;
+    email: string;
   };
   footerBottom: {
     copyrightText: string;
-    links: LinkProps[];
   };
 }
 
 const socialIconClasses = cn(
-  'text-base/[1] transition-all duration-350 hover:-translate-y-1 w-30px h-30px rounded-5 grid place-items-center dark:bg-accent-800/10 dark:hover:bg-primary dark:text-white dark:hover-text-white hover:text-white text-primary bg-primary/10 hover:bg-primary'
+  "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-white text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-accent-800",
 );
+
 const titleClasses = cn(
-  'text-gray-900 dark:text-white  text-md font-bold  leading-[1.25] md:text-lg mb-5 md:mb-[1.875rem]'
+  "text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-white mb-4",
 );
-const addressIconParentClasses = cn(
-  ' text-primary flex-none leading-none self-start relative top-2'
-);
-const addressItemClasses = cn('flex gap-5');
-const textColor = cn(
-  'transition-colors duration-300 hover:text-primary dark:hover:text-white'
+
+const linkClasses = cn(
+  "text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-300",
 );
 
 interface Props extends SectionProps {
@@ -67,204 +48,101 @@ interface Props extends SectionProps {
 }
 
 export function Footer({ className, footerTopClassName }: Props) {
-  const {
-    socialLinks,
-    columnOne,
-    columnTwo,
-    columnThree,
-    columnFour,
-    footerBottom,
-  } = footerSectionData;
+  const { socialLinks, quickLinks, services, contact, footerBottom } =
+    footerSectionData;
+
   return (
     <footer
       className={cn(
-        'overflow-hidden bg-accent-100 text-accent-800 dark:bg-accent-700 dark:text-body',
-        className
+        "border-t border-gray-200 bg-white text-gray-600 dark:border-accent-800 dark:bg-accent-900 dark:text-gray-300",
+        className,
       )}
     >
       <Container>
-        {/* Footer top  */}
         <div
           className={cn(
-            'flex items-center justify-between gap-x-20 gap-y-4 pb-5 pt-[60px] lg:pt-20',
-            footerTopClassName
+            "grid gap-8 py-10 md:grid-cols-2 lg:grid-cols-4",
+            footerTopClassName,
           )}
         >
-          <BrandLogo />
-          {socialLinks && socialLinks.length > 0 && (
-            <nav aria-label="social links">
-              <ul className="inline-flex items-center gap-2.5">
-                {socialLinks.map((socialLink, index) => (
-                  <li key={index}>
-                    <CustomLink
-                      aria-label={socialLink.href}
-                      className={socialIconClasses}
-                      href={socialLink.href}
-                      openNewTab
-                    >
-                      <span>{socialLink.icon}</span>
-                    </CustomLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
-        </div>
-
-        {/* Footer middle  */}
-        <div className="border-y border-accent-800 border-opacity-30 py-[60px] dark:border-accent-100 dark:border-opacity-30">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-            {/* Column one  */}
-            <div data-aos="fade-up" data-aos-delay="200">
-              <h3 className={titleClasses}>{columnOne.title}</h3>
-              {columnOne.links && columnOne.links.length > 0 && (
-                <nav aria-label="footer links navigation">
-                  <ul className="grid gap-2">
-                    {columnOne.links.map((link) => (
-                      <li
-                        key={link.label}
-                        className="flex items-center gap-2.5"
+          <div className="space-y-4">
+            <BrandLogo />
+            {socialLinks && socialLinks.length > 0 && (
+              <nav aria-label="social links">
+                <ul className="flex items-center gap-2">
+                  {socialLinks.map((socialLink, index) => (
+                    <li key={index}>
+                      <CustomLink
+                        aria-label={socialLink.href}
+                        className={socialIconClasses}
+                        href={socialLink.href}
+                        openNewTab
                       >
-                        <CustomLink
-                          href={link.href}
-                          openNewTab={link.openNewTab}
-                          className={textColor}
-                        >
-                          {link.label}
-                        </CustomLink>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              )}
-            </div>
-
-            {/* Column Two  */}
-            <div data-aos="fade-up" data-aos-delay="400">
-              <h3 className={titleClasses}>{columnTwo.title}</h3>
-              {columnTwo.links && columnTwo.links.length > 0 && (
-                <nav aria-label="footer links navigation">
-                  <ul className="grid gap-2">
-                    {columnTwo.links.map((link) => (
-                      <li
-                        key={link.label}
-                        className="flex items-center gap-2.5"
-                      >
-                        <CustomLink
-                          href={link.href}
-                          openNewTab={link.openNewTab}
-                          className={textColor}
-                        >
-                          {link.label}
-                        </CustomLink>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              )}
-            </div>
-
-            {/* Column three  */}
-            <div data-aos="fade-up" data-aos-delay="600">
-              <h3 className={titleClasses}>{columnThree.title}</h3>
-              {columnThree.blogs && columnThree.blogs.length > 0 && (
-                <div className="grid gap-6">
-                  {columnThree.blogs.map((blog, index) => (
-                    <article
-                      key={index}
-                      className="group flex items-center gap-4 text-accent-800  dark:text-body"
-                    >
-                      <div className="flex-none overflow-hidden rounded-5">
-                        <Image
-                          {...blog.image}
-                          alt={blog.image.alt}
-                          width={80}
-                          height={80}
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-                      <div>
-                        <h4 className="font-primary text-base font-normal leading-[1.87]">
-                          <CustomLink
-                            href={blog.slug}
-                            className="transition-colors duration-300 hover:text-primary"
-                          >
-                            {blog.title}
-                          </CustomLink>
-                        </h4>
-                        <p className="flex items-center gap-2.5">
-                          <span className="text-primary">
-                            <FaCalendarDays />
-                          </span>
-                          <span>{blog.date}</span>
-                        </p>
-                      </div>
-                    </article>
+                        <span>{socialLink.icon}</span>
+                      </CustomLink>
+                    </li>
                   ))}
-                </div>
-              )}
-            </div>
+                </ul>
+              </nav>
+            )}
+          </div>
 
-            {/* Column Four  */}
-            <div data-aos="fade-up" data-aos-delay="800">
-              <h3 className={titleClasses}>{columnFour.title}</h3>
-              <ul aria-label="addresses" className="grid gap-5">
-                <li className={addressItemClasses}>
-                  <span className={addressIconParentClasses}>
-                    <FaPhone />
-                  </span>
-                  <a
-                    href={`tel:${columnFour.phoneNumber.split(' ').join('')}`}
-                    className={textColor}
-                  >
-                    {columnFour.phoneNumber}
-                  </a>
-                </li>
-                <li className={addressItemClasses}>
-                  <span className={addressIconParentClasses}>
-                    <FaEnvelope />
-                  </span>
-                  <a href={`mailto:${columnFour.mail}`} className={textColor}>
-                    {columnFour.mail}
-                  </a>
-                </li>
-                <li className={addressItemClasses}>
-                  <span className={addressIconParentClasses}>
-                    <FaMapMarkerAlt />
-                  </span>
-                  <address className="not-italic">
-                    {columnFour.location}
-                  </address>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h3 className={titleClasses}>{quickLinks.title}</h3>
+            {quickLinks.links && quickLinks.links.length > 0 && (
+              <nav aria-label="footer links navigation">
+                <ul className="space-y-2">
+                  {quickLinks.links.map((link) => (
+                    <li key={link.label}>
+                      <CustomLink
+                        href={link.href}
+                        openNewTab={link.openNewTab}
+                        className={linkClasses}
+                      >
+                        {link.label}
+                      </CustomLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+
+          <div>
+            <h3 className={titleClasses}>{services.title}</h3>
+            {services.links && services.links.length > 0 && (
+              <nav aria-label="footer services navigation">
+                <ul className="space-y-2">
+                  {services.links.map((link) => (
+                    <li key={link.label}>
+                      <CustomLink
+                        href={link.href}
+                        openNewTab={link.openNewTab}
+                        className={linkClasses}
+                      >
+                        {link.label}
+                      </CustomLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+
+          <div>
+            <h3 className={titleClasses}>{contact.title}</h3>
+            <a
+              href={`mailto:${contact.email}`}
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+            >
+              <FaEnvelope className="text-primary" />
+              <span>{contact.email}</span>
+            </a>
           </div>
         </div>
 
-        {/* Footer bottom  */}
-        <div className="flex min-h-[90px] items-center py-5">
-          <Container>
-            <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 md:gap-x-10">
-              <p>{footerBottom.copyrightText}</p>
-              {footerBottom.links && footerBottom.links.length > 0 && (
-                <nav aria-label="footer bottom navigation">
-                  <ul className="flex flex-wrap items-center gap-x-4  md:gap-x-7">
-                    {footerBottom.links.map((link) => (
-                      <li key={link.label}>
-                        <CustomLink
-                          href={link.href}
-                          openNewTab={link.openNewTab}
-                          className={textColor}
-                        >
-                          {link.label}
-                        </CustomLink>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              )}
-            </div>
-          </Container>
+        <div className="border-t border-gray-200 py-6 text-center text-xs text-gray-500 dark:border-accent-800 dark:text-gray-500">
+          <p>{footerBottom.copyrightText}</p>
         </div>
       </Container>
     </footer>

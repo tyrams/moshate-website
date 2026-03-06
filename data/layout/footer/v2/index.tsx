@@ -1,9 +1,9 @@
 import { FooterSectionProps } from "@/src/layout/footer/v2";
 import {
   FaFacebookF,
+  FaLinkedinIn,
   FaTwitter,
   FaInstagram,
-  FaLinkedinIn,
 } from "react-icons/fa6";
 
 const currentYear = new Date().getFullYear();
@@ -27,16 +27,11 @@ export const footerSectionData: FooterSectionProps = {
       href: "https://www.instagram.com/",
     },
   ],
-  columnOne: {
+  quickLinks: {
     title: "Quick Links",
     links: [
       {
-        label: "Home",
-        href: "/",
-        openNewTab: false,
-      },
-      {
-        label: "About us",
+        label: "About Us",
         href: "/about",
         openNewTab: false,
       },
@@ -46,95 +41,37 @@ export const footerSectionData: FooterSectionProps = {
         openNewTab: false,
       },
       {
-        label: "Portfolio",
-        href: "/portfolio",
-        openNewTab: false,
-      },
-      {
-        label: "Blog",
-        href: "/blog",
+        label: "Contact",
+        href: "/contact",
         openNewTab: false,
       },
     ],
   },
-  columnTwo: {
-    title: "Service Links",
+  services: {
+    title: "Services",
     links: [
       {
-        label: "Cloud services",
-        href: "/",
+        label: "Strategy Design",
+        href: "/services",
         openNewTab: false,
       },
       {
-        label: "Backup solutions",
-        href: "/",
+        label: "Digital Transformation",
+        href: "/services",
         openNewTab: false,
       },
       {
-        label: "Network security",
-        href: "/",
-        openNewTab: false,
-      },
-      {
-        label: "Monitoring",
-        href: "/",
-        openNewTab: false,
-      },
-      {
-        label: "IT Consulting",
-        href: "/",
+        label: "Project Management & Delivery",
+        href: "/services",
         openNewTab: false,
       },
     ],
   },
-
-  columnThree: {
-    title: "Recent Blog",
-    blogs: [
-      {
-        image: {
-          src: "/assets/images/blog/blog-sm-1.jpg",
-          alt: "We provide a range of IT solutions",
-        },
-        title: "We provide a range of IT solutions",
-        date: "january 11, 2024",
-        slug: "./blog-details",
-      },
-      {
-        image: {
-          src: "/assets/images/blog/blog-sm-2.jpg",
-          alt: "IT solutions enhance efficiency",
-        },
-        title: "IT solutions enhance efficiency",
-        date: "january 11, 2024",
-        slug: "./blog-details",
-      },
-    ],
-  },
-  columnFour: {
-    title: "Contact Us",
-    phoneNumber: "+880 123 45 67 89",
-    mail: "yourmail@gmail.com",
-    location: "1212, Lav Vegas, The Veg Street, USA",
+  contact: {
+    title: "Contact",
+    email: "admin@moshateconsulting.co.za",
   },
   footerBottom: {
     copyrightText: `© Moshate Consulting (Pty) Ltd - ${currentYear} | All Rights Reserved`,
-    links: [
-      {
-        label: "Trams & Condition",
-        href: "/",
-        openNewTab: false,
-      },
-      {
-        label: "Privacy Policy",
-        href: "/",
-        openNewTab: false,
-      },
-      {
-        label: "Contact Us",
-        href: "/",
-        openNewTab: false,
-      },
-    ],
   },
 };

@@ -1,4 +1,4 @@
-import { AboutSectionProps } from '@/src/sections/about/v1';
+import { AboutSectionProps } from "@/src/sections/about/v1";
 
 function Icon1() {
   return (
@@ -34,46 +34,46 @@ function Icon2() {
 export const aboutSectionData: AboutSectionProps = {
   images: {
     image1: {
-      src: '/assets/images/about/about-1.png',
-      alt: 'about one',
+      src: "/assets/images/about/about-1.png",
+      alt: "about one",
       width: 195,
       height: 132,
     },
     image2: {
-      src: '/assets/images/about/about-2.png',
-      alt: 'about two',
+      src: "/assets/images/about/about-2.png",
+      alt: "about two",
       width: 312,
       height: 304,
     },
     image3: {
-      src: '/assets/images/about/about-3.png',
-      alt: 'about three',
+      src: "/assets/images/about/about-3.png",
+      alt: "about three",
       width: 250,
       height: 265,
     },
     image4: {
-      src: '/assets/images/about/about-4.png',
-      alt: 'about four',
+      src: "/assets/images/about/about-4.png",
+      alt: "about four",
       width: 250,
       height: 265,
     },
   },
   sectionHeading: {
-    subtitle: 'About us',
-    title: 'Co-Creating Fit-for-Purpose Solutions',
+    subtitle: "About us",
+    title: "Co-Creating Fit-for-Purpose Solutions",
     description:
-      'Moshate partners with organisations small and large to collaborate and co-create fit-for-purpose solutions to deliver value to all stakeholders involved. The use of digital technology tools and leading practices to solve business problems is critical to our delivery capability.',
+      "Moshate partners with organisations small and large to collaborate and co-create fit-for-purpose solutions to deliver value to all stakeholders involved. The use of digital technology tools and leading practices to solve business problems is critical to our delivery capability.",
   },
   keyPoints: [
     {
       icon: <Icon1 />,
-      title: '100% Woman Owned',
+      title: "100% Woman Owned",
     },
     {
       icon: <Icon2 />,
-      title: 'Level 1 BBBEE Status',
+      title: "Level 1 BBBEE Status",
     },
   ],
   description:
-    'Moshate Consulting is 100% woman owned and with Level 1 BBBEE status.',
+    "Moshate Consulting is 100% woman owned and with Level 1 BBBEE status.",
 };
