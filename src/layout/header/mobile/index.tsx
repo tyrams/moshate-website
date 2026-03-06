@@ -1,21 +1,21 @@
-import { BrandLogo } from '../../brand-logo';
-import { cn } from '@/src/utils/shadcn';
-import { headerData } from '@/data/layout/header/v1';
-import { OffCanvas } from './off-canvas';
+import { BrandLogo } from "../../brand-logo";
+import { cn } from "@/src/utils/shadcn";
+import { headerData } from "@/data/layout/header/v1";
+import { OffCanvas } from "./off-canvas";
 
 export const headerWrapperClasses = cn(
   // Layout
-  'fixed left-0 top-0 z-111 w-full',
+  "fixed left-0 top-0 z-111 w-full",
 
   // Background
-  'bg-white',
+  "bg-white",
 
   // Shadow
-  'shadow-1'
+  "shadow-1",
 );
 
 export function MobileHeader() {
-  const { menuItems } = headerData;
+  const { menuItems, contactInfo } = headerData;
 
   return (
     <div className="relative block [--mobile-height:64px] lg:hidden">
