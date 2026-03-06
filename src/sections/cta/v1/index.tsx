@@ -1,22 +1,22 @@
-import { SectionProps } from '@/src/common-types';
-import { Button } from '@/src/components/button';
-import { Container } from '@/src/components/container';
-import { TextInput } from '@/src/components/inputs/text-input';
-import { cn } from '@/src/utils/shadcn';
-import Image from 'next/image';
+import { SectionProps } from "@/src/common-types";
+import { Button } from "@/src/components/button";
+import { Container } from "@/src/components/container";
+import { TextInput } from "@/src/components/inputs/text-input";
+import { cn } from "@/src/utils/shadcn";
+import Image from "next/image";
 
 export interface CtaSectionProps {
   title: string;
 }
 
 const ctaSectionData: CtaSectionProps = {
-  title: 'Ready to Transform Your Business?',
+  title: "Ready to Transform Your Business?",
 };
 
 export function CtaSection({ className }: SectionProps) {
   const { title } = ctaSectionData;
   return (
-    <section className={cn(className)}>
+    <section className={cn("section-padding-primary", className)}>
       <Container>
         <div className="relative overflow-hidden rounded-5 bg-primary px-6 py-14">
           <div className="relative z-10 mx-auto max-w-[630px] rounded-5  text-center">
@@ -31,9 +31,9 @@ export function CtaSection({ className }: SectionProps) {
               <Button
                 type="submit"
                 className={cn(
-                  'min-w-[190px] flex-none text-white max-md:w-full',
-                  'bg-primary-light',
-                  'after:bg-white hover:text-accent-700 dark:hover:text-accent-700'
+                  "min-w-[190px] flex-none text-white max-md:w-full",
+                  "bg-primary-light",
+                  "after:bg-white hover:text-accent-700 dark:hover:text-accent-700",
                 )}
               >
                 <span>SUSCRIBE</span>

@@ -10,13 +10,13 @@ Menu
 
 Services section
 
-- Add intro on main page
+- Add intro on main page - DONE
 
 Footer
 
-- Remove blog section
-- Reduce the content
-- use menu for links
+- Remove blog section - DONE
+- Reduce the content - DONE
+- use menu for links - DONE
 
 Services Page
 
