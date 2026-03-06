@@ -1,14 +1,28 @@
-import { CustomLink } from '@/src/components/custom-link';
-import Image from 'next/image';
+import { CustomLink } from "@/src/components/custom-link";
+import Image from "next/image";
 
-import logoLight from 'public/assets/images/brand/logo-light.png';
-import logoDark from 'public/assets/images/brand/logo-dark.png';
+import logoLight from "public/assets/images/brand/logo-light.png";
+import logoDark from "public/assets/images/brand/logo-dark.png";
+import { cn } from "@/src/utils/shadcn";
 
-export function BrandLogo() {
+export interface BrandLogoProps {
+  className?: string;
+  imageClassName?: string;
+}
+
+export function BrandLogo({ className, imageClassName }: BrandLogoProps) {
+  const baseImageClass = "h-auto w-auto object-contain";
+  const defaultSizeClass = "max-h-[45px] md:max-h-[55px]";
+
   return (
-    <CustomLink href="/">
+    <CustomLink href="/" className={cn("inline-block", className)}>
       <Image
-        className="logo-light dark:hidden"
+        className={cn(
+          "logo-light dark:hidden",
+          baseImageClass,
+          defaultSizeClass,
+          imageClassName,
+        )}
         src={logoLight.src}
         width={logoLight.width}
         height={logoLight.height}
@@ -19,7 +33,12 @@ export function BrandLogo() {
         priority
       />
       <Image
-        className="logo-dark hidden dark:block"
+        className={cn(
+          "logo-dark hidden dark:block",
+          baseImageClass,
+          defaultSizeClass,
+          imageClassName,
+        )}
         src={logoDark.src}
         width={logoDark.width}
         height={logoDark.height}

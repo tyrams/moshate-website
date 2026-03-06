@@ -1,28 +1,29 @@
-import { serviceSectionData } from '@/data/service-section/v1/service-list-page';
-import { Footer } from '@/src/layout/footer/v2';
-import { MainHeader } from '@/src/layout/header';
-import { HeroSection } from '@/src/sections/hero/v3';
-import { ServiceSection } from '@/src/sections/service/v1';
-import { Metadata } from 'next';
+import { serviceSectionData } from "@/data/service-section/v1/service-list-page";
+import { Footer } from "@/src/layout/footer/v2";
+import { MainHeader } from "@/src/layout/header";
+import { HeroSection } from "@/src/sections/hero/v3";
+import { ServiceSection } from "@/src/sections/service/v1";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Moshate Consulting | Services',
-  description: 'Our Services are designed for small and large organisations. We understand the trends, leading practices and the industries in which we operate.',
+  title: "Moshate Consulting | Services",
+  description:
+    "Our Services are designed for small and large organisations. We understand the trends, leading practices and the industries in which we operate.",
 };
 
 export default function Page() {
   return (
     <>
-      <MainHeader version="2" />
+      <MainHeader />
       <HeroSection
         title="Services"
         breadcrumbItems={[
           {
-            label: 'Home',
-            href: '/',
+            label: "Home",
+            href: "/",
           },
           {
-            label: 'Service',
+            label: "Service",
           },
         ]}
       />
