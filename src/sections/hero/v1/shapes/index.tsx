@@ -8,10 +8,7 @@ export function Shapes() {
     <>
       {/* Bottom lines  */}
       <div
-        className={cn(
-          commonClasses,
-          "bottom-0 left-0 right-0 mx-auto hidden lg:block",
-        )}
+        className={cn(commonClasses, "bottom-0 left-0 right-0 w-full h-auto")}
         data-aos="fade-up"
         data-aos-delay="450"
       >
@@ -20,6 +17,7 @@ export function Shapes() {
           alt="hero bottom shape"
           width={1920}
           height={319}
+          className="w-full h-auto"
         />
       </div>
     </>

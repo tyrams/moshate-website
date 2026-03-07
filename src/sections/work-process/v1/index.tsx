@@ -1,7 +1,7 @@
-import { WorkprocessCardProps } from './card';
-import { TextSlider } from './text-slider';
-import { workprocessSectionData } from '@/data/work-process/v1';
-import { WorkCardsCaraousl } from './cards-carousel';
+import { WorkprocessCardProps } from "./card";
+import { TextSlider } from "./text-slider";
+import { workprocessSectionData } from "@/data/work-process/v1";
+import { WorkCardsCaraousl } from "./cards-carousel";
 
 export interface WorkprocessSectionProps {
   texts: string[];

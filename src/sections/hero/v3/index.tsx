@@ -1,9 +1,9 @@
-import { Container } from '@/src/components/container';
-import { CustomLink } from '@/src/components/custom-link';
-import { cn } from '@/src/utils/shadcn';
-import Image from 'next/image';
-import React from 'react';
-import bannerImage from 'public/assets/images/hero/hero-3.jpg';
+import { Container } from "@/src/components/container";
+import { CustomLink } from "@/src/components/custom-link";
+import { cn } from "@/src/utils/shadcn";
+import Image from "next/image";
+import React from "react";
+import { Shapes } from "../v1/shapes";
 
 interface BreadcrumbItem {
   href?: string;
@@ -17,37 +17,44 @@ export interface HeroSectionProps {
 
 export function HeroSection({ title, breadcrumbItems }: HeroSectionProps) {
   return (
-    <section className="section-padding-primary relative flex min-h-[450px] items-center">
-      {/* Background image  */}
-      <Image
-        priority
-        src={bannerImage.src}
-        alt={`${process.env.NEXT_PUBLIC_SITE_NAME} banner 3`}
-        fill
-        sizes="100vw"
-        className="pointer-events-none object-cover"
-      />
+    <section className="relative flex items-center justify-center overflow-hidden py-[9.375rem] min-h-[450px]">
+      {/* Background image — z-0 so it sits at the base of this stacking context */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/images/hero/banner-top.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover object-top"
+        />
+      </div>
 
-      {/* Overlay  */}
-      <span className="absolute inset-0 bg-gradient-1 from-white/0 to-white dark:from-accent-900/0 dark:to-accent-900"></span>
+      {/* Shapes — above the image */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <Shapes />
+      </div>
 
       <Container>
-        <div className="relative z-[4] flex flex-wrap items-center justify-between gap-x-20 gap-y-8 text-accent-900 dark:text-white lg:pt-[137px]">
-          <h1 className="font-secondary text-xl font-bold lg:w-1/2">{title}</h1>
-          {breadcrumbItems && breadcrumbItems.length > 0 && (
-            <Breadcrumb breadcrumbItems={breadcrumbItems} />
-          )}
+        <div className="relative z-20 mx-auto max-w-[800px] text-center text-white lg:mt-[60px]">
+          <div className="space-y-6 md:space-y-8 flex flex-col items-center">
+            <h1 className="font-secondary text-2xl font-semibold uppercase leading-[1.1] md:text-3xl lg:text-4xl">
+              {title}
+            </h1>
+            {breadcrumbItems && breadcrumbItems.length > 0 && (
+              <Breadcrumb breadcrumbItems={breadcrumbItems} />
+            )}
+          </div>
         </div>
       </Container>
     </section>
   );
 }
 
-const breadcrumbItemClasses = cn('h3 font-secondary');
+const breadcrumbItemClasses = cn("h3 font-secondary flex items-center");
 
 function Breadcrumb({
   breadcrumbItems,
-}: Pick<HeroSectionProps, 'breadcrumbItems'>) {
+}: Pick<HeroSectionProps, "breadcrumbItems">) {
   if (breadcrumbItems && breadcrumbItems.length > 0) {
     return (
       <nav aria-label="breadcrumb">

@@ -39,7 +39,7 @@ export function Header() {
 
           {/* Navigation  */}
           {menuItems && menuItems.length > 0 && (
-            <Navigation menuItems={menuItems} />
+            <Navigation menuItems={menuItems} isSticky={isSticky} />
           )}
         </div>
       </Container>

@@ -15,18 +15,7 @@ export default function Page() {
   return (
     <>
       <MainHeader />
-      <HeroSection
-        title="Services"
-        breadcrumbItems={[
-          {
-            label: "Home",
-            href: "/",
-          },
-          {
-            label: "Service",
-          },
-        ]}
-      />
+      <HeroSection title="Services" breadcrumbItems={[]} />
       <ServiceSection {...serviceSectionData} />
       <Footer />
     </>

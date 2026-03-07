@@ -3,6 +3,7 @@ import { MainHeader } from "@/src/layout/header";
 import { AboutSection } from "@/src/sections/about/v2";
 import { CtaSection } from "@/src/sections/cta/v1";
 import { HeroSection } from "@/src/sections/hero/v3";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,18 +16,7 @@ export default function Page() {
   return (
     <>
       <MainHeader />
-      <HeroSection
-        title="About Us"
-        breadcrumbItems={[
-          {
-            label: "Home",
-            href: "/",
-          },
-          {
-            label: "About",
-          },
-        ]}
-      />
+      <HeroSection title="About Us" breadcrumbItems={[]} />
       <AboutSection />
       <CtaSection />
       <Footer />

@@ -12,7 +12,7 @@ export interface BrandLogoProps {
 
 export function BrandLogo({ className, imageClassName }: BrandLogoProps) {
   const baseImageClass = "h-auto w-auto object-contain";
-  const defaultSizeClass = "max-h-[45px] md:max-h-[55px]";
+  const defaultSizeClass = "max-h-[54px] md:max-h-[66px]";
 
   return (
     <CustomLink href="/" className={cn("inline-block", className)}>

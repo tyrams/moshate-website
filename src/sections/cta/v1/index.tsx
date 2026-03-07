@@ -16,7 +16,7 @@ const ctaSectionData: CtaSectionProps = {
 export function CtaSection({ className }: SectionProps) {
   const { title } = ctaSectionData;
   return (
-    <section className={cn("section-padding-primary", className)}>
+    <section className={cn("mb-20", className)}>
       <Container>
         <div className="relative overflow-hidden rounded-5 bg-primary px-6 py-14">
           <div className="relative z-10 mx-auto max-w-[630px] rounded-5  text-center">

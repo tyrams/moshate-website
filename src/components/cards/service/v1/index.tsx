@@ -1,6 +1,6 @@
-import { Button } from '@/src/components/button';
-import { CustomLink } from '@/src/components/custom-link';
-import { cn } from '@/src/utils/shadcn';
+import { Button } from "@/src/components/button";
+import { CustomLink } from "@/src/components/custom-link";
+import { cn } from "@/src/utils/shadcn";
 
 export interface ServiceProps {
   icon: React.ReactNode;
@@ -14,13 +14,13 @@ export function ServiceCard({ icon, title, description, slug }: ServiceProps) {
     <article
       className={cn([
         // General
-        'group/service bg-white text-accent-900 shadow-3 transition-transform duration-350 dark:bg-accent-700 dark:text-white  dark:shadow-none',
+        "group/service bg-white text-accent-900 shadow-3 transition-transform duration-350 dark:bg-accent-700 dark:text-white  dark:shadow-none",
 
         // Layout
-        'relative z-1 block h-full space-y-6 overflow-hidden rounded-5 p-6 md:space-y-7 md:p-10',
+        "relative z-1 block h-full space-y-6 overflow-hidden rounded-5 p-6 md:space-y-7 md:p-10",
 
         //Hover
-        'hover:[transform:translateY(-.5rem)]',
+        "hover:[transform:translateY(-.5rem)]",
       ])}
     >
       <div className="flex items-center gap-5">
@@ -36,19 +36,19 @@ export function ServiceCard({ icon, title, description, slug }: ServiceProps) {
         asChild
         className={cn([
           // Layout
-          'rounded-5 border',
+          "rounded-5 border",
 
           // on card hover effects
-          'group-hover/service:border-primary',
+          "group-hover/service:border-primary",
 
           // Light
-          'border-current bg-transparent text-accent-900 hover:border-primary hover:bg-transparent hover:text-primary',
+          "border-current bg-transparent text-accent-900 hover:border-primary hover:bg-transparent hover:text-primary",
 
           // Dark
-          'dark:border-accent-900 dark:bg-accent-900 dark:text-white dark:hover:text-primary  group-hover/service:dark:bg-transparent',
+          "dark:border-accent-900 dark:bg-accent-900 dark:text-white dark:hover:text-primary  group-hover/service:dark:bg-transparent",
 
           // stop default button hover effects
-          'before:hidden after:hidden',
+          "before:hidden after:hidden",
         ])}
       >
         <CustomLink href={slug}>
