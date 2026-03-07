@@ -113,7 +113,7 @@ MCS brings years of expertise in the Information Technology industry to support 
 
 **Get in Touch**
 
-Get in touch with us by sending us a message using this form or email us at **admin@moshateconsulting.co.za** and we will get back to you shortly.
+Get in touch with us by sending us a message using this form or email us at **info@moshateconsulting.co.za** and we will get back to you shortly.
 
 ---
 

@@ -7,7 +7,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Moshate Consulting | Contact Us",
   description:
-    "Get in touch with Moshate Consulting. Send us a message or email us at admin@moshateconsulting.co.za.",
+    "Get in touch with Moshate Consulting. Send us a message or email us at info@moshateconsulting.co.za.",
 };
 
 export default function Page() {

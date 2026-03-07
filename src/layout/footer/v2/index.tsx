@@ -49,8 +49,7 @@ interface Props extends SectionProps {
 }
 
 export function Footer({ className, footerTopClassName }: Props) {
-  const { socialLinks, quickLinks, services, contact, footerBottom } =
-    footerSectionData;
+  const { quickLinks, services, contact, footerBottom } = footerSectionData;
 
   return (
     <footer
@@ -128,7 +127,7 @@ export function Footer({ className, footerTopClassName }: Props) {
               href={`https://www.linkedin.com/company/moshate/`}
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
             >
-              <FaLinkedin className="text-primary size-5" />
+              <FaLinkedin className="text-primary size-4" />
               <span>LinkedIn</span>
             </a>
           </div>
