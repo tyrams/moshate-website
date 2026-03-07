@@ -11,20 +11,9 @@ const currentYear = new Date().getFullYear();
 export const footerSectionData: FooterSectionProps = {
   socialLinks: [
     {
-      icon: <FaFacebookF />,
-      href: "https://www.facebook.com/",
-    },
-    {
       icon: <FaLinkedinIn />,
-      href: "https://www.linkedin.com/",
-    },
-    {
-      icon: <FaTwitter />,
-      href: "https://twitter.com/",
-    },
-    {
-      icon: <FaInstagram />,
-      href: "https://www.instagram.com/",
+      href: "https://www.linkedin.com/in/moshate-consulting-68155118b/",
+      label: "LinkedIn",
     },
   ],
   quickLinks: {
@@ -52,17 +41,17 @@ export const footerSectionData: FooterSectionProps = {
     links: [
       {
         label: "Strategy Design",
-        href: "/services",
+        href: "/services/strategy-design",
         openNewTab: false,
       },
       {
         label: "Digital Transformation",
-        href: "/services",
+        href: "/services/digital-transformation",
         openNewTab: false,
       },
       {
         label: "Project Management & Delivery",
-        href: "/services",
+        href: "/services/project-management",
         openNewTab: false,
       },
     ],

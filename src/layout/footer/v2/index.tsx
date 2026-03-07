@@ -4,12 +4,13 @@ import { Container } from "@/src/components/container";
 import { CustomLink } from "@/src/components/custom-link";
 import { cn } from "@/src/utils/shadcn";
 import { BrandLogo } from "src/layout/brand-logo";
-import { FaEnvelope } from "react-icons/fa6";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa6";
 import { ClassValue } from "clsx";
 
 interface SocialLinkProps {
   icon: React.ReactNode;
   href: string;
+  label: string;
 }
 
 export interface FooterSectionProps {
@@ -67,24 +68,9 @@ export function Footer({ className, footerTopClassName }: Props) {
         >
           <div className="space-y-4">
             <BrandLogo />
-            {socialLinks && socialLinks.length > 0 && (
-              <nav aria-label="social links">
-                <ul className="flex items-center gap-2">
-                  {socialLinks.map((socialLink, index) => (
-                    <li key={index}>
-                      <CustomLink
-                        aria-label={socialLink.href}
-                        className={socialIconClasses}
-                        href={socialLink.href}
-                        openNewTab
-                      >
-                        <span>{socialLink.icon}</span>
-                      </CustomLink>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )}
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Streamline. Simplify. Sustain.
+            </p>
           </div>
 
           <div>
@@ -137,6 +123,13 @@ export function Footer({ className, footerTopClassName }: Props) {
             >
               <FaEnvelope className="text-primary" />
               <span>{contact.email}</span>
+            </a>
+            <a
+              href={`https://www.linkedin.com/company/moshate/`}
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+            >
+              <FaLinkedin className="text-primary size-5" />
+              <span>LinkedIn</span>
             </a>
           </div>
         </div>
