@@ -48,7 +48,7 @@ const offCanvasProps: IOffCanvas = {
   contactInfo: {
     location: " ",
     phoneNumber: "",
-    mail: "info@moshateconsulting.co.za",
+    mail: "admin@moshateconsulting.co.za",
   },
   socialLinks: [],
 };

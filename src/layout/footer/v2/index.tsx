@@ -124,7 +124,7 @@ export function Footer({ className, footerTopClassName }: Props) {
               <span>{contact.email}</span>
             </a>
             <a
-              href={`https://www.linkedin.com/company/moshate/`}
+              href={`https://www.linkedin.com/in/moshate-consulting-68155118b/`}
               className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
             >
               <FaLinkedin className="text-primary size-4" />

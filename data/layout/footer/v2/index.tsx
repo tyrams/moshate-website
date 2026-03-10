@@ -58,7 +58,7 @@ export const footerSectionData: FooterSectionProps = {
   },
   contact: {
     title: "Contact",
-    email: "info@moshateconsulting.co.za",
+    email: "admin@moshateconsulting.co.za",
   },
   footerBottom: {
     copyrightText: `© Moshate Consulting (Pty) Ltd - ${currentYear} | All Rights Reserved`,
