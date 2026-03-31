@@ -4,6 +4,7 @@ import { MainHeader } from "@/src/layout/header";
 import { AboutSection } from "@/src/sections/about/v1";
 import { Hero } from "@/src/sections/hero/v1";
 import { ServiceSection } from "@/src/sections/service/v1";
+import { ContactSection } from "@/src/sections/contact/v1";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function Page() {
       <Hero />
       <ServiceSection className="!pb-0" {...serviceSectionData} />
       <AboutSection />
+      <ContactSection title="Lets Partner Together" />
       <Footer />
     </>
   );

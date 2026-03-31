@@ -12,35 +12,36 @@ export interface ContactSectionProps {
   image: Omit<ImageProps, 'width' | 'height'>;
 }
 
-export function ContactSection() {
+export function ContactSection({ title }: { title?: string } = {}) {
   const { sectionHeading, image } = contactSectionData;
+  const resolvedHeading = title ? { ...sectionHeading, title } : sectionHeading;
   return (
     <section className="section-padding-primary">
-      <div className="relative py-[60px]">
-        {/* Image area  */}
-        <div className="absolute left-0 top-0 z-1 h-full w-full overflow-hidden bg-red-500 md:w-[56%] md:rounded-r-5">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-            sizes={`(min-width: ${BREAKPOINTS.md}) 60vw, 100vw`}
-            placeholder="blur"
-            blurDataURL={blurDataUrl}
-          />
-        </div>
+      <Container>
+        <div className="relative py-[60px] pr-4">
+          {/* Image area */}
+          <div className="absolute left-0 top-0 z-1 h-full w-full overflow-hidden rounded-5 md:w-[56%]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes={`(min-width: ${BREAKPOINTS.md}) 60vw, 100vw`}
+              placeholder="blur"
+              blurDataURL={blurDataUrl}
+            />
+          </div>
 
-        <Container>
           <div className="ml-auto md:w-1/2">
-            <div className="relative z-[2] rounded-5 bg-white p-10 shadow-1 dark:bg-accent-700 lg:p-[60px]">
+            <div className="relative z-[2] rounded-5 bg-white p-10 [box-shadow:0_4px_15px_rgba(0,0,0,0.06),8px_0_20px_rgba(0,0,0,0.07)] dark:bg-accent-700 lg:p-[60px]">
               <div className="mb-30px">
-                <SectionHeading {...sectionHeading} />
+                <SectionHeading {...resolvedHeading} />
               </div>
               <Form />
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </section>
   );
 }
