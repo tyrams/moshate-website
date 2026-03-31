@@ -24,7 +24,6 @@ export default async function RootLayout({ children }: Props) {
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "dark",
         primary.variable,
         secondary.variable,
         "text-base leading-[1.875] text-accent-800 [&.dark]:text-body",
@@ -34,7 +33,7 @@ export default async function RootLayout({ children }: Props) {
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
