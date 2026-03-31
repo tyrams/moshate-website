@@ -18,8 +18,15 @@ export default function Page() {
     <>
       <MainHeader />
       <Hero />
-      <ServiceSection className="!pb-0" {...serviceSectionData} />
-      <AboutSection />
+      <div className="!bg-white dark:!bg-accent-950">
+        <ServiceSection
+          className="py-16 md:py-20 xl:py-24"
+          {...serviceSectionData}
+        />
+      </div>
+      <div className="!bg-white dark:!bg-accent-950">
+        <AboutSection className="py-16 md:py-20 xl:py-24" />
+      </div>
       <ContactSection title="Lets Partner Together" />
       <Footer />
     </>

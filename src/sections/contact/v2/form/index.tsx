@@ -1,21 +1,23 @@
-'use client';
+"use client";
 
-import { Button } from '@/src/components/button';
-import { TextInput } from '@/src/components/inputs/text-input';
-import { TextAreaInput } from '@/src/components/inputs/textarea-input';
-import { cn } from '@/src/utils/shadcn';
+import { Button } from "@/src/components/button";
+import { TextInput } from "@/src/components/inputs/text-input";
+import { TextAreaInput } from "@/src/components/inputs/textarea-input";
+import { cn } from "@/src/utils/shadcn";
 
-import * as Yup from 'yup';
-import { contactUsFormSubmit } from './server/contact-us-form-submit';
-import { toast } from 'sonner';
-import { Formik } from 'formik';
+import * as Yup from "yup";
+import { contactUsFormSubmit } from "./server/contact-us-form-submit";
+import { toast } from "sonner";
+import { Formik } from "formik";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const validationMessages = {
-  tooShort: 'Must be at least ${min} characters',
-  tooLong: 'Must be at most ${max} characters',
-  required: 'This field is required',
-  email: 'Invalid email format',
-  phoneFormat: 'Invalid phone number format',
+  tooShort: "Must be at least ${min} characters",
+  tooLong: "Must be at most ${max} characters",
+  required: "This field is required",
+  email: "Invalid email format",
+  phoneFormat: "Invalid phone number format",
 };
 
 const ContactUsSchema = Yup.object().shape({
@@ -36,28 +38,39 @@ const ContactUsSchema = Yup.object().shape({
     .required(validationMessages.required),
   phone: Yup.string().matches(
     /^[+\-()\s\d./]{1,15}$/,
-    validationMessages.phoneFormat
+    validationMessages.phoneFormat,
   ),
 });
 
 export type ContactUsSchemaType = Yup.InferType<typeof ContactUsSchema>;
 
 const fieldClasses = cn(
-  'bg-accent-100 dark:bg-accent-700 rounded-5 border-none'
+  "bg-accent-100 dark:bg-accent-700 rounded-5 border-none",
 );
 
-const errorClasses = cn('text-red-500 mt-1');
+const errorClasses = cn("text-red-500 mt-1");
 
 export function Form() {
+  const searchParams = useSearchParams();
+  const [initialEmail, setInitialEmail] = useState("");
+
+  useEffect(() => {
+    const emailParam = searchParams.get("email");
+    if (emailParam) {
+      setInitialEmail(emailParam);
+    }
+  }, [searchParams]);
+
   return (
     <>
       <Formik
+        enableReinitialize
         initialValues={{
-          name: '',
-          email: '',
-          subject: '',
-          phone: '',
-          message: '',
+          name: "",
+          email: initialEmail,
+          subject: "",
+          phone: "",
+          message: "",
         }}
         validationSchema={ContactUsSchema}
         onSubmit={async (values, { resetForm }) => {
@@ -186,7 +199,7 @@ export function Form() {
                 disabled={isSubmitting}
                 className={cn(
                   fieldClasses,
-                  'min-h-[140px] pt-4 md:min-h-[200px]'
+                  "min-h-[140px] pt-4 md:min-h-[200px]",
                 )}
               />
               {errors.message && touched.message && (

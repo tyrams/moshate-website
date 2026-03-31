@@ -18,7 +18,9 @@ export function ServiceSection({
   className,
 }: ServiceSectionProps) {
   return (
-    <section className={cn("section-padding-primary", className)}>
+    <section
+      className={cn("section-padding-primary bg-transparent", className)}
+    >
       <Container>
         {sectionHeading && (
           <div className="mb-10 md:mb-[3.75rem]" data-aos="fade-up">

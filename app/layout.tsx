@@ -1,20 +1,21 @@
-import './globals.css';
-import { Metadata } from 'next';
-import { primary, secondary } from '@/fonts';
-import { AOSInit } from '@/src/utils/aos';
-import { ScrollToTopButton } from '@/src/components/scroll-to-top';
-import { cn } from '@/src/utils/shadcn';
-import { Toaster } from 'sonner';
-import { ThemeProvider } from '@/src/components/theme-provider';
-import { ModeToggle } from '@/src/components/mode-toggle';
+import "./globals.css";
+import { Metadata } from "next";
+import { primary, secondary } from "@/fonts";
+import { AOSInit } from "@/src/utils/aos";
+import { ScrollToTopButton } from "@/src/components/scroll-to-top";
+import { cn } from "@/src/utils/shadcn";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "@/src/components/theme-provider";
+import { ModeToggle } from "@/src/components/mode-toggle";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const metadata: Metadata = {
-  title: 'Moshate Consulting',
-  description: 'Moshate Consulting - ICT and Management Consulting firm focused on innovative business management and digital solution services.',
+  title: "Moshate Consulting",
+  description:
+    "Moshate Consulting - ICT and Management Consulting firm focused on innovative business management and digital solution services.",
 };
 
 export default async function RootLayout({ children }: Props) {
@@ -23,10 +24,10 @@ export default async function RootLayout({ children }: Props) {
       lang="en"
       suppressHydrationWarning
       className={cn(
-        'dark',
+        "dark",
         primary.variable,
         secondary.variable,
-        'text-base leading-[1.875] text-accent-800 [&.dark]:text-body'
+        "text-base leading-[1.875] text-accent-800 [&.dark]:text-body",
       )}
     >
       <AOSInit />
@@ -37,13 +38,8 @@ export default async function RootLayout({ children }: Props) {
           enableSystem
           disableTransitionOnChange
         >
-          <div
-            className={cn(
-              'bg-white text-accent-800 dark:bg-accent-900 dark:text-body'
-            )}
-          >
+          <div className={cn("text-accent-800 dark:text-body")}>
             <main>{children}</main>
-            <ModeToggle />
           </div>
         </ThemeProvider>
         <Toaster

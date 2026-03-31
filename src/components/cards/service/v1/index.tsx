@@ -1,12 +1,24 @@
+import type { ReactNode } from "react";
 import { Button } from "@/src/components/button";
 import { CustomLink } from "@/src/components/custom-link";
 import { cn } from "@/src/utils/shadcn";
 
-export interface ServiceProps {
-  icon: React.ReactNode;
+export interface ServiceContentProps {
+  icon?: ReactNode;
   title: string;
   description: string;
   slug: string;
+  sidebarDescription?: string;
+  introTitle?: string;
+  introParagraphs?: string[];
+  keyOfferings?: string[];
+  deliveryFocus?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+export interface ServiceProps extends ServiceContentProps {
+  icon: ReactNode;
 }
 
 export function ServiceCard({ icon, title, description, slug }: ServiceProps) {

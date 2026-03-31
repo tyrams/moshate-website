@@ -1,11 +1,12 @@
-import { aboutSectionData } from '@/data/about-section/v1';
-import { ImageProps } from '@/src/common-types';
-import { Container } from '@/src/components/container';
-import { SectionHeading } from '@/src/components/section-heading';
-import { SectionHeadingWithoutStylingProps } from '@/src/components/section-heading/interface';
-import Image from 'next/image';
+import { aboutSectionData } from "@/data/about-section/v1";
+import { ImageProps } from "@/src/common-types";
+import { Container } from "@/src/components/container";
+import { SectionHeading } from "@/src/components/section-heading";
+import { SectionHeadingWithoutStylingProps } from "@/src/components/section-heading/interface";
+import { cn } from "@/src/utils/shadcn";
+import Image from "next/image";
 
-import patternOne from 'public/assets/images/about/pattern-1.png';
+import patternOne from "public/assets/images/about/pattern-1.png";
 
 export interface AboutSectionProps {
   images: {
@@ -22,10 +23,15 @@ export interface AboutSectionProps {
   description?: string;
 }
 
-export function AboutSection() {
+export function AboutSection({ className }: { className?: string } = {}) {
   const { images, sectionHeading, keyPoints, description } = aboutSectionData;
   return (
-    <section className="section-padding-primary overflow-hidden">
+    <section
+      className={cn(
+        "section-padding-primary overflow-hidden bg-transparent",
+        className,
+      )}
+    >
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[.92fr_1fr] 2xl:gap-20">
           {/* Content  */}

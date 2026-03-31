@@ -91,54 +91,46 @@ function Icon6() {
 
 export const serviceSectionData: ServiceSectionProps = {
   sectionHeading: {
-    subtitle: "Services",
+    subtitle: "What we offer",
     title: "Innovative Solutions for Your Business",
-    description:
-      "We provide cutting-edge ICT and management consulting services to help your business thrive in the digital age.",
+    description: "",
     alignment: "start",
   },
   services: [
     {
       icon: <Icon1 />,
-      title: "Strategy Design",
+      title: "Strategy & Operating Model Design",
       description:
-        "Our strategy design consulting services empower businesses to strategise and plan ensuring they are well-positioned for the future. We collaborate closely with organisations to develop tailored strategies that drive growth and resilience in an ever-evolving marketplace.",
-      slug: "/services/strategy-design",
+        "Turning Vision into Actionable Direction. We help leadership teams define clear strategic direction and design organisations capable of executing that strategy effectively.",
+      slug: "/services/strategy-operating-model-design",
     },
     {
       icon: <Icon2 />,
-      title: "Digital Transformation",
+      title: "Strategy Design",
       description:
-        "From digital strategy development to implementation, we help businesses adapt to the evolving digital landscape and stay ahead of the curve. We offer tailored advisory, guidance and implementation of digital solutions perfectly suited to enhance your business operations.",
-      slug: "/services/digital-transformation",
+        "Building the digital-ready organisation through strategic technology enablement, modern architecture, and data-driven operating models.",
+      slug: "/services/strategy-design",
     },
     {
       icon: <Icon3 />,
-      title: "Project Management & Delivery Services",
+      title: "Digital Transformation",
       description:
-        "Unlock the potential of your organization with our comprehensive services designed to bring your strategic initiatives to life. We specialize in establishing PMOs, Agile Project Management and Project & Portfolio Management Implementation.",
-      slug: "/services/project-management",
+        "High-performance delivery capability for complex initiatives, with strong governance, agile execution, and measurable outcomes.",
+      slug: "/services/digital-transformation",
     },
     {
       icon: <Icon4 />,
-      title: "Operational Excellence",
+      title: "Operational Excellence & Change",
       description:
-        "Elevate your business with our Operational Excellence services, designed to enhance your business operations and drive superior performance. We focus on streamlining workflows, reducing inefficiencies, and improving service delivery.",
-      slug: "/services/operational-excellence",
+        "Process improvement and change adoption services designed to improve service delivery, performance, and organisational capability.",
+      slug: "/services/operational-excellence-change",
     },
     {
       icon: <Icon5 />,
-      title: "IT Resources",
+      title: "Specialist Resources & Capacity Support",
       description:
-        "MCS brings years of expertise in the Information Technology industry, to support your critical IT and business projects. With a robust database of skilled professionals, we have successfully collaborated with clients to deliver key projects.",
-      slug: "/services/it-resources",
-    },
-    {
-      icon: <Icon6 />,
-      title: "Consulting Services",
-      description:
-        "Moshate Consulting Services offers cutting-edge ICT and management solutions to enhance your business operations. Our strategic digital services and expertise in business management are tailored to drive lasting value for your organization.",
-      slug: "/services/consulting-services",
+        "Flexible access to experienced professionals who can integrate quickly and add immediate value across transformation and delivery teams.",
+      slug: "/services/specialist-resources-capacity-support",
     },
   ],
 };

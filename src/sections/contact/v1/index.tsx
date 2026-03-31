@@ -1,15 +1,15 @@
-import { contactSectionData } from '@/data/contact-section/v1';
-import { ImageProps, blurDataUrl } from '@/src/common-types';
-import { Container } from '@/src/components/container';
-import { SectionHeading } from '@/src/components/section-heading';
-import { SectionHeadingWithoutStylingProps } from '@/src/components/section-heading/interface';
-import { BREAKPOINTS } from '@/src/themes/interface';
-import Image from 'next/image';
-import { Form } from './form';
+import { contactSectionData } from "@/data/contact-section/v1";
+import { ImageProps, blurDataUrl } from "@/src/common-types";
+import { Container } from "@/src/components/container";
+import { SectionHeading } from "@/src/components/section-heading";
+import { SectionHeadingWithoutStylingProps } from "@/src/components/section-heading/interface";
+import { BREAKPOINTS } from "@/src/themes/interface";
+import Image from "next/image";
+import { Form } from "./form";
 
 export interface ContactSectionProps {
   sectionHeading: SectionHeadingWithoutStylingProps;
-  image: Omit<ImageProps, 'width' | 'height'>;
+  image: Omit<ImageProps, "width" | "height">;
 }
 
 export function ContactSection({ title }: { title?: string } = {}) {

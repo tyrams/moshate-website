@@ -24,11 +24,7 @@ export default async function Page({
     <>
       <MainHeader />
       <HeroSection title={serviceTitle} breadcrumbItems={[]} />
-      <ServiceDetailsSection
-        serviceTitle={serviceTitle}
-        serviceDescription={serviceData?.description}
-        serviceIcon={serviceData?.icon}
-      />
+      <ServiceDetailsSection service={serviceData} />
       <Footer />
     </>
   );

@@ -1,9 +1,13 @@
+"use client";
+
 import { SectionProps } from "@/src/common-types";
 import { Button } from "@/src/components/button";
 import { Container } from "@/src/components/container";
 import { TextInput } from "@/src/components/inputs/text-input";
 import { cn } from "@/src/utils/shadcn";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 
 export interface CtaSectionProps {
   title: string;
@@ -13,19 +17,47 @@ const ctaSectionData: CtaSectionProps = {
   title: "Ready to Transform Your Business?",
 };
 
-export function CtaSection({ className }: SectionProps) {
+export function CtaSection({
+  className,
+  bgColor = "bg-primary",
+  contentClassName = "py-14",
+}: SectionProps & { bgColor?: string; contentClassName?: string }) {
   const { title } = ctaSectionData;
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (email) {
+      router.push(`/contact?email=${encodeURIComponent(email)}`);
+    } else {
+      router.push("/contact");
+    }
+  };
+
   return (
     <section className={cn("mb-20", className)}>
       <Container>
-        <div className="relative overflow-hidden rounded-5 bg-primary px-6 py-14">
+        <div
+          className={cn(
+            "relative overflow-hidden rounded-5 px-6",
+            contentClassName,
+            bgColor,
+          )}
+        >
           <div className="relative z-10 mx-auto max-w-[630px] rounded-5  text-center">
             <h2 className="mx-auto max-w-[490px] font-secondary text-xl font-bold capitalize leading-[1.25] text-white md:text-2xl">
               {title}
             </h2>
-            <form className="mt-6 flex flex-col items-center justify-center gap-[.625rem] md:mt-[1.875rem] md:flex-row">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-6 flex flex-col items-center justify-center gap-[.625rem] md:mt-[1.875rem] md:flex-row"
+            >
               <TextInput
+                type="email"
                 placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="border-white border-opacity-60 text-white placeholder:text-white focus:border-white dark:border-white dark:border-opacity-60 dark:text-white dark:placeholder:text-white"
               />
               <Button
@@ -36,7 +68,7 @@ export function CtaSection({ className }: SectionProps) {
                   "after:bg-white hover:text-accent-700 dark:hover:text-accent-700",
                 )}
               >
-                <span>SUSCRIBE</span>
+                <span>Contact Us</span>
               </Button>
             </form>
           </div>
