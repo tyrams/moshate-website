@@ -1,4 +1,3 @@
-import { aboutSectionData } from "@/data/about-section/v2";
 import { ImageProps } from "@/src/common-types";
 import { Container } from "@/src/components/container";
 import { SectionHeading } from "@/src/components/section-heading";
@@ -13,7 +12,6 @@ export interface AboutSectionProps {
 }
 
 export function AboutSection() {
-  const { sectionHeading, aboutUsPoints, image } = aboutSectionData;
   return (
     <section className="section-padding-primary overflow-hidden">
       <Container>
@@ -30,8 +28,8 @@ export function AboutSection() {
               {/* Image */}
               <div className="relative overflow-hidden">
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src="/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.jpg"
+                  alt="about image five"
                   width={640}
                   height={678}
                   className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -46,24 +44,64 @@ export function AboutSection() {
             data-aos="fade-up-right"
             data-aos-delay="400"
           >
-            <SectionHeading {...sectionHeading} />
-            {aboutUsPoints && aboutUsPoints.length > 0 && (
-              <ul
-                aria-label="about us point"
-                className="mt-10 grid max-w-[560px] gap-1 gap-x-20 sm:grid-cols-2 md:gap-2"
-              >
-                {aboutUsPoints.map((point, index) => (
-                  <li className="flex items-center gap-3 lg:gap-4" key={index}>
-                    <span className="text-lg text-primary">
-                      <FaCircleCheck />
-                    </span>
-                    <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <SectionHeading
+              subtitle="Our Mission"
+              title="Empowering Businesses in the Digital Landscape"
+              description="Our mission is to empower businesses with the tools and strategies needed to thrive in today's fast-paced digital landscape. By combining technical expertise with industry insights, we help organizations harness the power of technology to achieve their objectives and stay ahead of the competition."
+            />
+            <ul
+              aria-label="about us point"
+              className="mt-10 grid max-w-[560px] gap-1 gap-x-20 sm:grid-cols-2 md:gap-2"
+            >
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  Honesty, Excellence and Respect
+                </span>
+              </li>
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  Ubuntu-driven Company Culture
+                </span>
+              </li>
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  Highly Skilled Teams
+                </span>
+              </li>
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  Public & Private Sector Experience
+                </span>
+              </li>
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  Revenue Management & Public Safety
+                </span>
+              </li>
+              <li className="flex items-center gap-3 lg:gap-4">
+                <span className="text-lg text-primary">
+                  <FaCircleCheck />
+                </span>
+                <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
+                  IT, Mining, Banking & Telecoms
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </Container>

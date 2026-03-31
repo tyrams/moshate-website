@@ -1,46 +1,40 @@
-import { WorkprocessSectionProps } from '@/src/sections/work-process/v1';
+import { WorkprocessSectionProps } from "@/src/sections/work-process/v1";
+import { count } from "console";
 
 export const workprocessSectionData: WorkprocessSectionProps = {
-  texts: [
-    'Delivery Approach',
-    'Consulting',
-    'Delivery Approach',
-    'Solutions',
-    'Delivery Approach',
-    'Digital',
-  ],
+  texts: [],
   cards: [
     {
       icon: <Icon1 />,
-      title: 'Collaboration',
+      title: "Collaboration",
       description:
-        'We believe that teamwork drives innovation. We partner with organisations to co-create solutions that deliver value to all stakeholders.',
-      count: '01',
-      link: '',
+        "We work as an extension of our clients' teams, fostering trust, transparency and shared ownership of outcomes.",
+      count: "01",
+      link: "",
     },
     {
       icon: <Icon2 />,
-      title: 'Agility',
+      title: "Agility",
       description:
-        'Our agility helps us respond to evolving needs, ensuring we adapt quickly and deliver results in a fast-changing environment.',
-      count: '02',
-      link: '',
+        "We adapt quickly to changing requirements and environments, ensuring solutions remain relevant and effective.",
+      count: "02",
+      link: "",
     },
     {
       icon: <Icon3 />,
-      title: 'Client Focus',
+      title: "Client Focus",
       description:
-        'By prioritizing our clients in every aspect of our work, we ensure our solutions are customized to their specific requirements.',
-      count: '03',
-      link: '',
+        "Our work begins and ends with client value. Every solution is designed to address specific business needs and objectives.",
+      count: "03",
+      link: "",
     },
     {
       icon: <Icon4 />,
-      title: 'Digital Mindset',
+      title: "Digital Mindset",
       description:
-        'Adopting a digital mindset allows us to harness cutting-edge technologies for the best possible outcomes for our clients.',
-      count: '04',
-      link: '',
+        "We leverage modern technologies, data-driven insights, and leading practices to deliver forward-looking, sustainable solutions.",
+      count: "04",
+      link: "",
     },
   ],
 };
