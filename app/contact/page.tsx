@@ -3,6 +3,7 @@ import { MainHeader } from "@/src/layout/header";
 import { ContactSection } from "@/src/sections/contact/v2";
 import { HeroSection } from "@/src/sections/hero/v3";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Moshate Consulting | Contact Us",
@@ -15,7 +16,9 @@ export default function Page() {
     <>
       <MainHeader />
       <HeroSection title="Contact Us" breadcrumbItems={[]} />
-      <ContactSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ContactSection />
+      </Suspense>
       <Footer />
     </>
   );
