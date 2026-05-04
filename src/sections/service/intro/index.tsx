@@ -29,7 +29,7 @@ export function ServiceIntroSection({ className }: { className?: string }) {
             </div>
 
             <div className="mt-6 space-y-5 text-left">
-              <p className="font-secondary text-md leading-[1.75] text-accent-700 dark:text-accent-200">
+              <p>
                 Moshate Consulting Services delivers forward-thinking ICT and
                 management solutions designed to optimise operations, accelerate
                 transformation, and unlock sustainable growth. Our strategic
@@ -37,7 +37,7 @@ export function ServiceIntroSection({ className }: { className?: string }) {
                 expertise, enable organisations to solve complex challenges,
                 improve performance, and realise measurable value.
               </p>
-              <p className="font-secondary text-md leading-[1.75] text-accent-700 dark:text-accent-200">
+              <p>
                 Moshate Consulting Services partners with organisations to solve
                 complex challenges, modernise operations, and deliver measurable
                 outcomes. Our integrated approach combines strategic insight,
@@ -45,7 +45,7 @@ export function ServiceIntroSection({ className }: { className?: string }) {
                 improvement to ensure initiatives move from concept to
                 sustainable impact.
               </p>
-              <p className="font-secondary text-md leading-[1.75] text-accent-700 dark:text-accent-200">
+              <p>
                 We focus on areas where organisations most often struggle:
                 strategy execution, digital transformation and adoption,
                 delivery capability and operational performance.

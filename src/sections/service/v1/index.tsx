@@ -10,12 +10,14 @@ export interface ServiceSectionProps {
   sectionHeading?: SectionHeadingProps;
   services: ServiceProps[];
   className?: ClassValue;
+  contentClassName?: ClassValue;
 }
 
 export function ServiceSection({
   sectionHeading,
   services,
   className,
+  contentClassName,
 }: ServiceSectionProps) {
   return (
     <section
@@ -28,7 +30,12 @@ export function ServiceSection({
           </div>
         )}
         {services && services.length > 0 && (
-          <div className="-mx-4 flex flex-wrap justify-center gap-y-30px">
+          <div
+            className={cn(
+              "-mx-4 flex flex-wrap justify-center gap-y-30px",
+              contentClassName,
+            )}
+          >
             {services.map((service, index) => (
               <div
                 key={index}

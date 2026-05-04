@@ -42,16 +42,16 @@ export function ServiceDetailsSection({
               )}
 
               {sidebarDescription && (
-                <p className="text-accent-800 dark:text-body">
-                  {sidebarDescription}
-                </p>
+                <p
+                  dangerouslySetInnerHTML={{ __html: sidebarDescription }}
+                />
               )}
             </div>
 
             {keyOfferings.length > 0 && (
               <div className="rounded-5 border border-accent-200 bg-white p-6 shadow-3 dark:border-accent-700 dark:bg-accent-800">
                 <h4 className="mb-5 text-md font-bold text-accent-700 dark:text-white">
-                  Key offerings
+                  Delivery focus
                 </h4>
                 <ul className="grid gap-4">
                   {keyOfferings.map((offering) => (
@@ -89,10 +89,7 @@ export function ServiceDetailsSection({
                   </h2>
                 )}
                 {introParagraphs.map((paragraph, index) => (
-                  <p
-                    key={`${title}-intro-${index}`}
-                    className="text-accent-800 dark:text-body"
-                  >
+                  <p key={`${title}-intro-${index}`}>
                     {paragraph}
                   </p>
                 ))}
@@ -102,7 +99,7 @@ export function ServiceDetailsSection({
             {deliveryFocus.length > 0 && (
               <div className="grid gap-4 rounded-5 bg-accent-50 p-6 dark:bg-accent-700/40 md:p-8">
                 <h4 className="text-md font-bold text-accent-700 dark:text-white">
-                  Delivery focus
+                  Key offerings
                 </h4>
                 <div className="grid gap-3 md:grid-cols-2">
                   {deliveryFocus.map((offering) => (

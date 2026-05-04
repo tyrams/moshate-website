@@ -22,6 +22,7 @@ export default function Page() {
       <ServiceSection
         {...serviceSectionData}
         className="py-12 md:py-16 xl:py-20"
+        contentClassName="justify-start"
       />
       <CtaSection
         className="mt-16 mb-12 md:mt-20 md:mb-16 lg:mt-24 lg:mb-20"

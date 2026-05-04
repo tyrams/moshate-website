@@ -40,18 +40,18 @@ export const footerSectionData: FooterSectionProps = {
     title: "Services",
     links: [
       {
-        label: "Strategy Design",
-        href: "/services/strategy-design",
+        label: "Strategy & Operating Model Design",
+        href: "/services/strategy-operating-model-design",
         openNewTab: false,
       },
       {
-        label: "Digital Transformation",
-        href: "/services/digital-transformation",
+        label: "Digital Transformation & Enterprise Enablement",
+        href: "/services/digital-transformation-enterprise-enablement",
         openNewTab: false,
       },
       {
-        label: "Project Management & Delivery",
-        href: "/services/project-management",
+        label: "Project, Programme & PMO Services",
+        href: "/services/project-programme-pmo-services",
         openNewTab: false,
       },
     ],

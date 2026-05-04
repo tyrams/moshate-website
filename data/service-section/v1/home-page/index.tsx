@@ -44,6 +44,31 @@ function Icon3() {
   );
 }
 
+function DigitalTransformationIcon() {
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 65 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17.5 38.7h14.1l-2.8 18.8 19.9-29.9H34.5l3-20.1-20 31.2Z"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.2 18.5a25.6 25.6 0 0 1 36.6 0M10.1 48.2a31.5 31.5 0 0 0 44.8 0"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export const serviceSectionData: ServiceSectionProps = {
   sectionHeading: {
     subtitle: "Services",
@@ -55,24 +80,24 @@ export const serviceSectionData: ServiceSectionProps = {
   services: [
     {
       icon: <Icon1 />,
-      title: "Strategy Design",
+      title: "Strategy & Operating Model Design",
       description:
         "We empower businesses to strategise and plan, ensuring they are well-positioned for the future with tailored strategies that drive growth and resilience.",
-      slug: "/services",
+      slug: "/services/strategy-operating-model-design",
     },
     {
-      icon: <Icon2 />,
-      title: "Digital Transformation",
+      icon: <DigitalTransformationIcon />,
+      title: "Digital Transformation & Enterprise Enablement",
       description:
         "From digital strategy development to implementation, we help businesses adapt to the evolving digital landscape and stay ahead of the curve.",
-      slug: "/services",
+      slug: "/services/digital-transformation-enterprise-enablement",
     },
     {
       icon: <Icon3 />,
-      title: "Project Management & Delivery",
+      title: "Project, Programme & PMO Services",
       description:
         "We specialise in establishing PMOs to ensure consistent project delivery, alongside Agile Project Management and Portfolio Management Implementation.",
-      slug: "/services",
+      slug: "/services/project-programme-pmo-services",
     },
   ],
 };

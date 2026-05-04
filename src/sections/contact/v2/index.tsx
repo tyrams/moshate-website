@@ -24,7 +24,7 @@ export const contactSectionData: ContactSectionProps = {
     sectionHeading: {
       title: "Get in Touch",
       description:
-        "Get in touch with us by sending us a message using this form or email us at admin@moshateconsulting.co.za and we will get back to you shortly.",
+        "Get in touch with us by sending us a message using this form or email us and we will get back to you shortly.",
     },
     location: `South Africa`,
     mail: "admin@moshateconsulting.co.za",

@@ -38,11 +38,11 @@ export function ValuesSection() {
             data-aos-delay="200"
           >
             <SectionHeading subtitle="Our Foundation" title="Our Values" />
-            <p className="mt-6 font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+            <p className="mt-6">
               Our work is guided by a strong foundation of integrity, excellence
               and respect.
             </p>
-            <p className="mt-5 font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+            <p className="mt-5">
               At the heart of our culture is the principle of{" "}
               <span className="font-semibold text-primary">Ubuntu</span> — "I am
               because we are." We believe our success is intrinsically linked to
@@ -50,10 +50,10 @@ export function ValuesSection() {
               how we collaborate, communicate, and deliver value.
             </p>
             <div className="mt-7">
-              <p className="font-secondary text-md font-semibold text-accent-900 dark:text-white">
+              <p className="text-md font-semibold text-accent-900 dark:text-white">
                 We prioritise:
               </p>
-              <ul className="mt-4 space-y-3 font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <ul className="mt-4 space-y-3 text-md leading-[1.8] text-accent-700 dark:text-accent-200">
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
                   <span>Honesty and integrity in every engagement</span>

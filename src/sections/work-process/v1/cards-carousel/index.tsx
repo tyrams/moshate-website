@@ -24,8 +24,13 @@ export function WorkCardsCaraousl({
             <div className="mt-[60px]">
               <Swiper
                 className="!overflow-visible"
-                speed={400}
+                speed={700}
                 loop
+                autoplay={{
+                  delay: 2800,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
                 spaceBetween={30}
                 slidesPerView={3}
                 breakpoints={{

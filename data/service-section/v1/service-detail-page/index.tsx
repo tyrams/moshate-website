@@ -7,7 +7,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
     description:
       "Turning Vision into Actionable Direction. We help leadership teams define clear strategic direction and design organisations capable of executing that strategy effectively.",
     sidebarDescription:
-      "Turning Vision into Actionable Direction. We help leadership teams define clear strategic direction and design organisations capable of executing that strategy effectively.",
+      "<b>Turning Vision into Actionable Direction.</b><br/> We help leadership teams define clear strategic direction and design organisations capable of executing that strategy effectively.",
     introTitle: "Strategic Clarity Meets Organisational Capability",
     introParagraphs: [
       "We work with leadership teams to clarify where the organisation is going, define strategic priorities, and translate ambition into practical roadmaps with milestones, ownership, and measurable outcomes.",
@@ -29,12 +29,12 @@ export const serviceDetailPageData: ServiceContentProps[] = [
     imageAlt: "Strategy and operating model design",
   },
   {
-    slug: "/services/strategy-design",
-    title: "Strategy Design",
+    slug: "/services/digital-transformation-enterprise-enablement",
+    title: "Digital Transformation & Enterprise Enablement",
     description:
       "Building the digital-ready organisation through strategic technology enablement, modern architecture, and data-driven operating models.",
     sidebarDescription:
-      "Building the Digital-Ready Organisation. We enable organisations to harness technology as a strategic asset — not just a support function. From digital strategy execution to modern architecture and data capabilities, we deliver solutions that enhance efficiency, agility, and service delivery.",
+      "<b>Building the Digital-Ready Organisation.</b><br/> We enable organisations to harness technology as a strategic asset — not just a support function. From digital strategy execution to modern architecture and data capabilities, we deliver solutions that enhance efficiency, agility, and service delivery.",
     introTitle: "Turning Strategy into Practical Digital Direction",
     introParagraphs: [
       "We help leadership teams translate ambition into executable plans by aligning business priorities, technology choices, and operating realities.",
@@ -54,15 +54,15 @@ export const serviceDetailPageData: ServiceContentProps[] = [
     ],
     imageSrc:
       "/assets/images/black-businesswoman-shaking-hands-with-male-partner.jpg",
-    imageAlt: "Strategy design and digital enablement",
+    imageAlt: "Digital transformation and enterprise enablement",
   },
   {
-    slug: "/services/digital-transformation",
-    title: "Digital Transformation",
+    slug: "/services/project-programme-pmo-services",
+    title: "Project, Programme & PMO Services",
     description:
       "High-performance delivery capability for complex initiatives, with strong governance, agile execution, and measurable outcomes.",
     sidebarDescription:
-      "High-Performance Delivery at Scale. We strengthen delivery capability through robust governance, structured methodologies, and experienced leadership to ensure initiatives are completed on time, within scope, and with intended benefits realised.",
+      "<b>High-Performance Delivery at Scale.</b><br/> We strengthen delivery capability through robust governance, structured methodologies, and experienced leadership to ensure initiatives are completed on time, within scope, and with intended benefits realised.",
     introTitle: "Delivery Excellence for Complex Programmes",
     introParagraphs: [
       "Successful organisations execute well. We help teams deliver with confidence by combining delivery discipline, stakeholder alignment, and clear reporting.",
@@ -81,7 +81,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Compliance Projects (e.g., POPIA, Business Continuity)",
     ],
     imageSrc: "/assets/images/businessman-colleague-shaking-hands.jpg",
-    imageAlt: "Digital transformation and delivery planning",
+    imageAlt: "Project, programme and PMO services",
   },
   {
     slug: "/services/operational-excellence-change",
@@ -89,7 +89,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
     description:
       "Process improvement and change adoption services designed to improve service delivery, performance, and organisational capability.",
     sidebarDescription:
-      "Improving Performance from the Inside Out. We help organisations streamline operations, reduce inefficiencies, and strengthen capabilities to deliver consistent, high-quality outcomes.",
+      "<b>Improving Performance from the Inside Out.</b><br/> We help organisations streamline operations, reduce inefficiencies, and strengthen capabilities to deliver consistent, high-quality outcomes.",
     introTitle: "Operational Change That Improves Performance",
     introParagraphs: [
       "We integrate process improvement with people, governance, and performance management so change is adopted and sustained, not just documented.",
@@ -116,7 +116,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
     description:
       "Flexible access to experienced professionals who can integrate quickly and add immediate value across transformation and delivery teams.",
     sidebarDescription:
-      "Access to Critical Skills On Demand. When internal capacity is constrained, we provide experienced professionals who integrate seamlessly into your teams and deliver immediate value.",
+      "<b>Access to Critical Skills On Demand.</b><br/> When internal capacity is constrained, we provide experienced professionals who integrate seamlessly into your teams and deliver immediate value.",
     introTitle: "Flexible Capacity, Delivered by Specialists",
     introParagraphs: [
       "Our talent network spans technology, project delivery, and business transformation disciplines, helping organisations flex capability without compromising quality.",

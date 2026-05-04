@@ -60,7 +60,7 @@ export function OurStorySection() {
             <SectionHeading subtitle="Our Journey" title="Our Story" />
 
             <div className="mt-6 space-y-6">
-              <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <p>
                 In an increasingly complex and fast-moving digital world,
                 organisations need more than technology—they need trusted
                 partners who understand both business realities and future
@@ -71,7 +71,7 @@ export function OurStorySection() {
                 <h4 className="font-secondary text-lg font-semibold text-accent-900 dark:text-white">
                   Our Mission
                 </h4>
-                <p className="mt-3 font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+                <p className="mt-3">
                   Our mission is to empower organisations with the strategies,
                   capabilities, and tools required to thrive in the digital
                   economy. By integrating technology expertise with industry
@@ -81,7 +81,7 @@ export function OurStorySection() {
                 </p>
               </div>
 
-              <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <p>
                 As a proudly South African,{" "}
                 <span className="font-semibold text-primary">
                   women-owned business

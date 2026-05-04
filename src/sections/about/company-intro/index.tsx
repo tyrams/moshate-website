@@ -14,7 +14,7 @@ export function CompanyIntroSection() {
             data-aos-delay="200"
           >
             <SectionHeading subtitle="About the Company" title="Who We Are" />
-            <p className="mt-6 font-secondary text-md leading-[1.75] text-accent-700 dark:text-accent-200">
+            <p className="mt-6">
               Moshate Consulting Services is a women-owned technology and
               management consulting firm delivering innovative ICT and business
               solutions that enable organisations to perform, transform and
@@ -22,7 +22,7 @@ export function CompanyIntroSection() {
               strategic digital services, sound management practices, and deep
               industry expertise.
             </p>
-            <p className="mt-5 font-secondary text-md leading-[1.75] text-accent-700 dark:text-accent-200">
+            <p className="mt-5">
               Our team combines technical excellence with practical business
               insight to design solutions tailored to each client&apos;s unique
               context, challenges, and ambitions. We are committed to delivering

@@ -36,7 +36,7 @@ export function CapabilitiesSection() {
               <h3 className="h5 mb-4 text-accent-900 dark:text-white">
                 Strategic Digital Solutions
               </h3>
-              <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <p>
                 Leveraging cutting-edge digital technologies to transform
                 business operations and unlock new growth opportunities.
               </p>
@@ -67,7 +67,7 @@ export function CapabilitiesSection() {
               <h3 className="h5 mb-4 text-accent-900 dark:text-white">
                 Modern Management Practices
               </h3>
-              <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <p>
                 Implementing proven methodologies and best practices to drive
                 operational excellence and sustainable performance.
               </p>
@@ -98,7 +98,7 @@ export function CapabilitiesSection() {
               <h3 className="h5 mb-4 text-accent-900 dark:text-white">
                 Collaborative Co-creation
               </h3>
-              <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+              <p>
                 Partnering with organisations to design fit-for-purpose
                 solutions that address real business challenges and deliver
                 measurable value.
@@ -109,7 +109,7 @@ export function CapabilitiesSection() {
 
           {/* Bottom text */}
           <div className="mx-auto mt-12 max-w-3xl text-center">
-            <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+            <p>
               We collaborate with organisations of all sizes, from emerging
               enterprises to large institutions, generating value for all
               stakeholders through practical, innovative solutions.
@@ -124,7 +124,7 @@ export function CapabilitiesSection() {
             <h3 className="h3 mb-4 font-bold text-primary">
               Public Sector Expertise
             </h3>
-            <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+            <p>
               We are deeply committed to strengthening public service delivery
               and have experience across multiple government domains, including:
             </p>
@@ -140,7 +140,7 @@ export function CapabilitiesSection() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 font-secondary text-md text-accent-700 dark:text-accent-200"
+                  className="flex items-start gap-3 text-md text-accent-700 dark:text-accent-200"
                 >
                   <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                   <span>{item}</span>
@@ -154,7 +154,7 @@ export function CapabilitiesSection() {
             <h3 className="h3 mb-4 font-bold text-primary">
               Private Sector Experience
             </h3>
-            <p className="font-secondary text-md leading-[1.8] text-accent-700 dark:text-accent-200">
+            <p>
               Our team brings cross-industry experience from the private sector,
               including:
             </p>
@@ -168,7 +168,7 @@ export function CapabilitiesSection() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 font-secondary text-md text-accent-700 dark:text-accent-200"
+                  className="flex items-start gap-3 text-md text-accent-700 dark:text-accent-200"
                 >
                   <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                   <span>{item}</span>

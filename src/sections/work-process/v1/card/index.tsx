@@ -18,11 +18,13 @@ export function WorkprocessCard({
   link,
 }: WorkprocessCardProps) {
   return (
-    <div className="relative whitespace-normal rounded-5 bg-accent-100 p-6  dark:bg-accent-700 lg:p-10">
+    <div className="group/work relative h-full whitespace-normal rounded-5 bg-accent-100 p-6 shadow-3 transition-all duration-400 hover:-translate-y-2 hover:bg-white hover:shadow-xl dark:bg-accent-700 dark:hover:bg-accent-800 lg:p-10">
       <div className="flex items-center gap-5">
         <div className="relative flex-none">
-          <span className="absolute -top-3 inline-block h-16 w-16 rounded-full bg-primary"></span>
-          <span className="relative -left-3 top-3 z-1 text-white">{icon}</span>
+          <span className="absolute -top-3 inline-block h-16 w-16 rounded-full bg-primary transition-transform duration-400 group-hover/work:scale-110"></span>
+          <span className="relative -left-3 top-3 z-1 block text-white transition-transform duration-400 group-hover/work:-translate-y-1">
+            {icon}
+          </span>
         </div>
         <h3 className="h3 text-accent-900 dark:text-white">{title}</h3>
       </div>

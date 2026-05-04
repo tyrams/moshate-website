@@ -105,21 +105,21 @@ export const serviceSectionData: ServiceSectionProps = {
       slug: "/services/strategy-operating-model-design",
     },
     {
-      icon: <Icon2 />,
-      title: "Strategy Design",
+      icon: <Icon4 />,
+      title: "Digital Transformation & Enterprise Enablement",
       description:
         "Building the digital-ready organisation through strategic technology enablement, modern architecture, and data-driven operating models.",
-      slug: "/services/strategy-design",
+      slug: "/services/digital-transformation-enterprise-enablement",
     },
     {
       icon: <Icon3 />,
-      title: "Digital Transformation",
+      title: "Project, Programme & PMO Services",
       description:
         "High-performance delivery capability for complex initiatives, with strong governance, agile execution, and measurable outcomes.",
-      slug: "/services/digital-transformation",
+      slug: "/services/project-programme-pmo-services",
     },
     {
-      icon: <Icon4 />,
+      icon: <Icon6 />,
       title: "Operational Excellence & Change",
       description:
         "Process improvement and change adoption services designed to improve service delivery, performance, and organisational capability.",

@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: Props) {
       className={cn(
         primary.variable,
         secondary.variable,
-        "text-base leading-[1.875] text-accent-800 [&.dark]:text-body",
+        "font-primary text-base leading-[1.875] text-accent-800 [&.dark]:text-body",
       )}
     >
       <AOSInit />

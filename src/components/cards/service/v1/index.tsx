@@ -29,26 +29,28 @@ export function ServiceCard({ icon, title, description, slug }: ServiceProps) {
         "group/service bg-white text-accent-900 shadow-3 transition-transform duration-350 dark:bg-accent-700 dark:text-white  dark:shadow-none",
 
         // Layout
-        "relative z-1 block h-full space-y-6 overflow-hidden rounded-5 p-6 md:space-y-7 md:p-10",
+        "relative z-1 flex h-full flex-col overflow-hidden rounded-5 p-6 md:p-10",
 
         //Hover
         "hover:[transform:translateY(-.5rem)]",
       ])}
     >
       <div className="flex items-center gap-5">
-        <span className="flex-none text-[2.5rem] transition-all duration-300 group-hover/service:scale-90 group-hover/service:text-primary md:text-[4rem]">
+        <span className="flex-none text-[2.5rem] text-primary transition-all duration-300 group-hover/service:scale-90 md:text-[4rem]">
           {icon}
         </span>
         <h2 className="text-md font-bold leading-[1.25] md:text-lg">
           <CustomLink href={slug}>{title}</CustomLink>
         </h2>
       </div>
-      <p className="text-accent-800 dark:text-body">{description}</p>
+      <p className="mt-5 flex-1 text-accent-800 dark:text-body">
+        {description}
+      </p>
       <Button
         asChild
         className={cn([
           // Layout
-          "rounded-5 border",
+          "mt-7 w-fit rounded-5 border",
 
           // on card hover effects
           "group-hover/service:border-primary",
