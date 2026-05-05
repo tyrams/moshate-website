@@ -140,9 +140,9 @@ export function CapabilitiesSection() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-md text-accent-700 dark:text-accent-200"
+                  className="flex items-center gap-3 text-accent-800 dark:text-body"
                 >
-                  <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                  <span className="h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -168,9 +168,9 @@ export function CapabilitiesSection() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-md text-accent-700 dark:text-accent-200"
+                  className="flex items-center gap-3 text-accent-800 dark:text-body"
                 >
-                  <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                  <span className="h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                   <span>{item}</span>
                 </li>
               ))}

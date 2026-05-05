@@ -67,7 +67,7 @@ export function OurStorySection() {
                 possibilities.
               </p>
 
-              <div className="rounded-lg border-l-4 border-primary bg-white/50 p-6 dark:bg-accent-800/30">
+              <div className="rounded-none border-l-4 border-primary bg-white/50 p-6 dark:bg-accent-800/30">
                 <h4 className="font-secondary text-lg font-semibold text-accent-900 dark:text-white">
                   Our Mission
                 </h4>

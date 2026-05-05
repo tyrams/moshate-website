@@ -53,21 +53,21 @@ export function ValuesSection() {
               <p className="text-md font-semibold text-accent-900 dark:text-white">
                 We prioritise:
               </p>
-              <ul className="mt-4 space-y-3 text-md leading-[1.8] text-accent-700 dark:text-accent-200">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+              <ul className="mt-4 space-y-3 text-accent-800 dark:text-body">
+                <li className="flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
                   <span>Honesty and integrity in every engagement</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+                <li className="flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
                   <span>Excellence and quality in our deliverables</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+                <li className="flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
                   <span>Respect and partnership in our relationships</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+                <li className="flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
                   <span>
                     High performance through skilled, accountable teams
                   </span>
