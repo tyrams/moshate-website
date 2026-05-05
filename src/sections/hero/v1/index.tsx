@@ -11,14 +11,14 @@ import { cn } from "@/src/utils/shadcn";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./hero.module.css";
 import SwiperCore, { EffectFade } from "swiper";
-import { Swiper as SwiperType, Navigation } from "swiper";
+import { Swiper as SwiperType, Navigation, Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
 import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-SwiperCore.use([EffectFade, Navigation]);
+SwiperCore.use([EffectFade, Navigation, Autoplay]);
 
 const navigationButtonCommonClasses = cn(
   "w-[60px] relative z-40 h-[60px] grid place-items-center leading-none text-[1.25rem] bg-accent-900 hover:bg-primary transition-all duration-300 text-white rounded-full",
@@ -37,13 +37,13 @@ export function Hero() {
   const swiperRef = useRef<SwiperType>();
   const { items } = heroData;
   return (
-    <section className={styles["hero"]}>
+    <section className={cn("bg-accent-900", styles["hero"])}>
       {items && items.length > 0 && (
         <Swiper
           effect="fade"
           fadeEffect={{ crossFade: true }}
           loop
-          speed={300}
+          speed={1800}
           autoplay={{ delay: 3000 }}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -61,7 +61,7 @@ export function Hero() {
 
                 <div
                   className={cn(
-                    "absolute inset-0 -z-1 bg-cover bg-no-repeat [background-position:top_center] [transform:scale(1)] [transition:7000ms_ease,opacity_1500ms_ease-in]",
+                    "absolute inset-0 -z-1 bg-cover bg-no-repeat [background-position:top_center] [transform:scale(1)]",
                     styles["hero-bg"],
                   )}
                   style={{ backgroundImage: `url(${item.image.src})` }}

@@ -8,7 +8,15 @@
   z-index: 44;
 }
 
+.hero-bg {
+  transition: transform 7000ms ease;
+}
+
 .hero {
+  :global(.swiper-slide) {
+    transition-timing-function: ease-in-out;
+  }
+
   :global(.swiper-slide-active) {
     .hero-content {
       opacity: 1;
