@@ -1,0 +1,16 @@
+{
+  "name": "moshate-contact-function",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.7.3",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^4.0.6610"
+  }
+}

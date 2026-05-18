@@ -3,6 +3,7 @@
 import { Button } from "@/src/components/button";
 import { TextInput } from "@/src/components/inputs/text-input";
 import { TextAreaInput } from "@/src/components/inputs/textarea-input";
+import { submitContactForm } from "@/src/utils/contact-form-submit";
 import { cn } from "@/src/utils/shadcn";
 
 import * as Yup from "yup";
@@ -43,8 +44,6 @@ const ContactUsSchema = Yup.object().shape({
 
 export type ContactUsSchemaType = Yup.InferType<typeof ContactUsSchema>;
 
-const contactEmail = "admin@moshateconsulting.co.za";
-
 const fieldClasses = cn(
   "bg-accent-100 dark:bg-accent-700 rounded-5 border-none",
 );
@@ -74,23 +73,16 @@ export function Form() {
           message: "",
         }}
         validationSchema={ContactUsSchema}
-        onSubmit={(values, { resetForm }) => {
-          const body = [
-            `Name: ${values.name}`,
-            `Email: ${values.email}`,
-            values.phone ? `Phone: ${values.phone}` : "",
-            "",
-            values.message,
-          ]
-            .filter((line) => line !== "")
-            .join("\n");
-          const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(
-            values.subject,
-          )}&body=${encodeURIComponent(body)}`;
-
-          window.location.href = mailtoUrl;
-          toast.success("Opening your email app");
-          resetForm();
+        onSubmit={async (values, { resetForm }) => {
+          try {
+            const message = await submitContactForm(values);
+            toast.success(message);
+            resetForm();
+          } catch (error) {
+            toast.error(
+              error instanceof Error ? error.message : "Unable to send your message",
+            );
+          }
         }}
       >
         {({

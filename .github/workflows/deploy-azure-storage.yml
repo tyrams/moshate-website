@@ -1,4 +1,4 @@
-name: Deploy static site to Azure Storage
+name: Deploy site to Azure
 
 on:
   push:
@@ -20,16 +20,49 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Install contact function dependencies
+        run: npm install --omit=dev --prefix azure-functions/contact
+
+      - name: Configure contact function settings
+        run: |
+          az functionapp config appsettings set \
+            --name func-moshate-contact-prod \
+            --resource-group rg-moshate-website-prod \
+            --settings \
+              CONTACT_MAIL_ADDRESS="${{ secrets.CONTACT_MAIL_ADDRESS }}" \
+              CONTACT_MAIL_PASSWORD="${{ secrets.CONTACT_MAIL_PASSWORD }}"
+
+      - name: Package contact function
+        run: |
+          cd azure-functions/contact
+          zip -r ../../contact-function.zip .
+
+      - name: Deploy contact function
+        run: |
+          az functionapp deployment source config-zip \
+            --name func-moshate-contact-prod \
+            --resource-group rg-moshate-website-prod \
+            --src contact-function.zip
+
+      - name: Configure static build contact endpoint
+        run: |
+          FUNCTION_HOSTNAME=$(az functionapp show \
+            --name func-moshate-contact-prod \
+            --resource-group rg-moshate-website-prod \
+            --query defaultHostName \
+            --output tsv)
+          echo "NEXT_PUBLIC_CONTACT_FUNCTION_URL=https://$FUNCTION_HOSTNAME/api/ContactForm" >> "$GITHUB_ENV"
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build static site
         run: npm run build
-
-      - name: Azure login
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Upload static files to Azure Storage
         run: |
