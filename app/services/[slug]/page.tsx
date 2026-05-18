@@ -3,6 +3,7 @@ import { MainHeader } from "@/src/layout/header";
 import { HeroSection } from "@/src/sections/hero/v3";
 import { ServiceDetailsSection } from "@/src/sections/service-details/v1";
 import { getServiceBySlug } from "@/data/service-section/v1/service-list-page/utils";
+import { getServiceDetailSlugs } from "@/data/service-section/v1/service-detail-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,10 @@ export const metadata: Metadata = {
   description:
     "Moshate Consulting - ICT and Management Consulting firm focused on innovative business management and digital solution services.",
 };
+
+export function generateStaticParams() {
+  return getServiceDetailSlugs().map((slug) => ({ slug }));
+}
 
 export default async function Page({
   params,

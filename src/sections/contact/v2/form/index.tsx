@@ -6,7 +6,6 @@ import { TextAreaInput } from "@/src/components/inputs/textarea-input";
 import { cn } from "@/src/utils/shadcn";
 
 import * as Yup from "yup";
-import { contactUsFormSubmit } from "./server/contact-us-form-submit";
 import { toast } from "sonner";
 import { Formik } from "formik";
 import { useSearchParams } from "next/navigation";
@@ -44,6 +43,8 @@ const ContactUsSchema = Yup.object().shape({
 
 export type ContactUsSchemaType = Yup.InferType<typeof ContactUsSchema>;
 
+const contactEmail = "admin@moshateconsulting.co.za";
+
 const fieldClasses = cn(
   "bg-accent-100 dark:bg-accent-700 rounded-5 border-none",
 );
@@ -73,15 +74,23 @@ export function Form() {
           message: "",
         }}
         validationSchema={ContactUsSchema}
-        onSubmit={async (values, { resetForm }) => {
-          const result = await contactUsFormSubmit(values);
+        onSubmit={(values, { resetForm }) => {
+          const body = [
+            `Name: ${values.name}`,
+            `Email: ${values.email}`,
+            values.phone ? `Phone: ${values.phone}` : "",
+            "",
+            values.message,
+          ]
+            .filter((line) => line !== "")
+            .join("\n");
+          const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(
+            values.subject,
+          )}&body=${encodeURIComponent(body)}`;
 
-          if (result.data === null) {
-            toast.error(result.message);
-          } else {
-            toast.success(result.message);
-            resetForm();
-          }
+          window.location.href = mailtoUrl;
+          toast.success("Opening your email app");
+          resetForm();
         }}
       >
         {({

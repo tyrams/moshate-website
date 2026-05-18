@@ -145,3 +145,9 @@ export function getServiceDetailBySlug(slug: string) {
     (service) => service.slug === `/services/${slug}`,
   );
 }
+
+export function getServiceDetailSlugs() {
+  return serviceDetailPageData.map((service) =>
+    service.slug.replace("/services/", ""),
+  );
+}

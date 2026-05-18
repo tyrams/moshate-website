@@ -8,7 +8,6 @@ import { Formik } from 'formik';
 import { FaUser, FaSpeakap } from 'react-icons/fa6';
 
 import * as Yup from 'yup';
-import { contactUsFormSubmit } from './server/contact-us-form-submit';
 import { toast } from 'sonner';
 
 const validationMessages = {
@@ -38,6 +37,8 @@ const ContactUsSchema = Yup.object().shape({
 
 export type ContactUsSchemaType = Yup.InferType<typeof ContactUsSchema>;
 
+const contactEmail = 'admin@moshateconsulting.co.za';
+
 const fieldCommonClasses = cn('!pr-[44px]');
 const errorClasses = cn('!border-red-600 border');
 const errorMessageClasses = cn('sr-only');
@@ -52,15 +53,20 @@ export function Form() {
         message: '',
       }}
       validationSchema={ContactUsSchema}
-      onSubmit={async (values, { resetForm }) => {
-        const result = await contactUsFormSubmit(values);
+      onSubmit={(values, { resetForm }) => {
+        const body = [
+          `Name: ${values.name}`,
+          `Email: ${values.email}`,
+          '',
+          values.message,
+        ].join('\n');
+        const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(
+          values.subject
+        )}&body=${encodeURIComponent(body)}`;
 
-        if (result.data === null) {
-          toast.error(result.message);
-        } else {
-          toast.success(result.message);
-          resetForm();
-        }
+        window.location.href = mailtoUrl;
+        toast.success('Opening your email app');
+        resetForm();
       }}
     >
       {({
