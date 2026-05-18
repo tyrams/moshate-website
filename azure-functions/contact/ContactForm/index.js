@@ -1,4 +1,3 @@
-const { app } = require("@azure/functions");
 const nodemailer = require("nodemailer");
 
 const maxLengths = {
@@ -72,60 +71,55 @@ function buildHtml(values) {
   `;
 }
 
-app.http("ContactForm", {
-  methods: ["POST"],
-  authLevel: "anonymous",
-  route: "ContactForm",
-  handler: async (request, context) => {
-    const { CONTACT_MAIL_ADDRESS, CONTACT_MAIL_PASSWORD } = process.env;
+module.exports = async function (context, req) {
+  const { CONTACT_MAIL_ADDRESS, CONTACT_MAIL_PASSWORD } = process.env;
 
-    if (!CONTACT_MAIL_ADDRESS || !CONTACT_MAIL_PASSWORD) {
-      context.error("Missing contact mail app settings");
-      return {
-        status: 500,
-        jsonBody: { message: "Contact form is not configured" },
-      };
-    }
+  if (!CONTACT_MAIL_ADDRESS || !CONTACT_MAIL_PASSWORD) {
+    context.log.error("Missing contact mail app settings");
+    context.res = {
+      status: 500,
+      body: { message: "Contact form is not configured" },
+    };
+    return;
+  }
 
-    const payload = await request.json().catch(() => null);
-    const validation = validatePayload(payload);
+  const validation = validatePayload(req.body);
 
-    if (validation.error) {
-      return {
-        status: 400,
-        jsonBody: { message: validation.error },
-      };
-    }
+  if (validation.error) {
+    context.res = {
+      status: 400,
+      body: { message: validation.error },
+    };
+    return;
+  }
 
-    const values = validation.values;
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: CONTACT_MAIL_ADDRESS,
-        pass: CONTACT_MAIL_PASSWORD,
-      },
+  const values = validation.values;
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: CONTACT_MAIL_ADDRESS,
+      pass: CONTACT_MAIL_PASSWORD,
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: CONTACT_MAIL_ADDRESS,
+      replyTo: values.email,
+      to: CONTACT_MAIL_ADDRESS,
+      subject: values.subject,
+      html: buildHtml(values),
     });
 
-    try {
-      await transporter.sendMail({
-        from: CONTACT_MAIL_ADDRESS,
-        replyTo: values.email,
-        to: CONTACT_MAIL_ADDRESS,
-        subject: values.subject,
-        html: buildHtml(values),
-      });
-
-      return {
-        status: 200,
-        jsonBody: { message: "Thanks for getting in touch" },
-      };
-    } catch (error) {
-      context.error(error);
-
-      return {
-        status: 500,
-        jsonBody: { message: "Unable to send your message" },
-      };
-    }
-  },
-});
+    context.res = {
+      status: 200,
+      body: { message: "Thanks for getting in touch" },
+    };
+  } catch (error) {
+    context.log.error(error);
+    context.res = {
+      status: 500,
+      body: { message: "Unable to send your message" },
+    };
+  }
+};
