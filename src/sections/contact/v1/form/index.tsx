@@ -52,16 +52,10 @@ export function Form() {
         message: '',
       }}
       validationSchema={ContactUsSchema}
-      onSubmit={async (values, { resetForm }) => {
-        try {
-          const message = await submitContactForm(values);
-          toast.success(message);
-          resetForm();
-        } catch (error) {
-          toast.error(
-            error instanceof Error ? error.message : 'Unable to send your message'
-          );
-        }
+      onSubmit={(values, { resetForm }) => {
+        const message = submitContactForm(values);
+        toast.success(message);
+        resetForm();
       }}
     >
       {({
