@@ -4,28 +4,45 @@ type ContactFormValues = {
   subject: string;
   message: string;
   phone?: string;
+  "h-captcha-response": string;
 };
 
-const contactEmail = "admin@moshateconsulting.co.za";
+export type ContactFormSubmitResult =
+  | { success: true; message: string }
+  | { success: false; message: string };
 
-function openEmailClient(values: ContactFormValues) {
-  const body = [
-    `Name: ${values.name}`,
-    `Email: ${values.email}`,
-    values.phone ? `Phone: ${values.phone}` : "",
-    "",
-    values.message,
-  ]
-    .filter((line) => line !== "")
-    .join("\n");
-  const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(
-    values.subject,
-  )}&body=${encodeURIComponent(body)}`;
+export async function submitContactForm(
+  values: ContactFormValues,
+): Promise<ContactFormSubmitResult> {
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
 
-  window.location.href = mailtoUrl;
-}
+    const result = await response.json().catch(() => ({
+      success: false,
+      message: "Contact service returned an unexpected response.",
+    }));
 
-export function submitContactForm(values: ContactFormValues) {
-  openEmailClient(values);
-  return "Opening your email app";
+    if (result.success) {
+      return {
+        success: true,
+        message: "Thank you! Your message has been sent.",
+      };
+    }
+
+    return {
+      success: false,
+      message:
+        result.message ||
+        "Something went wrong. Please try again or email us directly.",
+    };
+  } catch {
+    return {
+      success: false,
+      message: "Unable to send your message. Please try again later.",
+    };
+  }
 }

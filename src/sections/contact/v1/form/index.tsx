@@ -1,61 +1,91 @@
-'use client';
+"use client";
 
-import { Button } from '@/src/components/button';
-import { TextInput } from '@/src/components/inputs/text-input';
-import { TextAreaInput } from '@/src/components/inputs/textarea-input';
-import { cn } from '@/src/utils/shadcn';
-import { submitContactForm } from '@/src/utils/contact-form-submit';
-import { Formik } from 'formik';
-import { FaUser, FaSpeakap } from 'react-icons/fa6';
+import { Button } from "@/src/components/button";
+import { TextInput } from "@/src/components/inputs/text-input";
+import { TextAreaInput } from "@/src/components/inputs/textarea-input";
+import { cn } from "@/src/utils/shadcn";
+import { submitContactForm } from "@/src/utils/contact-form-submit";
+import { isLocalHostname } from "@/src/utils/local-hostnames";
+import { Formik } from "formik";
+import { FaUser, FaSpeakap } from "react-icons/fa6";
+import { useEffect, useMemo, useRef, useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
-import * as Yup from 'yup';
-import { toast } from 'sonner';
+import * as Yup from "yup";
+import { toast } from "sonner";
 
 const validationMessages = {
-  tooShort: 'Must be at least ${min} characters',
-  tooLong: 'Must be at most ${max} characters',
-  required: 'This field is required',
-  email: 'Invalid email format',
+  tooShort: "Must be at least ${min} characters",
+  tooLong: "Must be at most ${max} characters",
+  required: "This field is required",
+  email: "Invalid email format",
+  captcha: "Please complete the hCaptcha check",
 };
 
-const ContactUsSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, validationMessages.tooShort)
-    .max(50, validationMessages.tooLong)
-    .required(validationMessages.required),
-  email: Yup.string()
-    .email(validationMessages.email)
-    .required(validationMessages.required),
-  subject: Yup.string()
-    .min(2, validationMessages.tooShort)
-    .max(50, validationMessages.tooLong)
-    .required(validationMessages.required),
-  message: Yup.string()
-    .min(2, validationMessages.tooShort)
-    .max(300, validationMessages.tooLong)
-    .required(validationMessages.required),
-});
+const hCaptchaSiteKey = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
 
-export type ContactUsSchemaType = Yup.InferType<typeof ContactUsSchema>;
+const createContactUsSchema = (requiresCaptcha: boolean) =>
+  Yup.object().shape({
+    name: Yup.string()
+      .min(2, validationMessages.tooShort)
+      .max(50, validationMessages.tooLong)
+      .required(validationMessages.required),
+    email: Yup.string()
+      .email(validationMessages.email)
+      .required(validationMessages.required),
+    subject: Yup.string()
+      .min(2, validationMessages.tooShort)
+      .max(50, validationMessages.tooLong)
+      .required(validationMessages.required),
+    message: Yup.string()
+      .min(2, validationMessages.tooShort)
+      .max(300, validationMessages.tooLong)
+      .required(validationMessages.required),
+    "h-captcha-response": requiresCaptcha
+      ? Yup.string().required(validationMessages.captcha)
+      : Yup.string(),
+  });
 
-const fieldCommonClasses = cn('!pr-[44px]');
-const errorClasses = cn('!border-red-600 border');
-const errorMessageClasses = cn('sr-only');
+export type ContactUsSchemaType = Yup.InferType<
+  ReturnType<typeof createContactUsSchema>
+>;
+
+const fieldCommonClasses = cn("!pr-[44px]");
+const errorClasses = cn("!border-red-600 border");
+const errorMessageClasses = cn("sr-only");
 
 export function Form() {
+  const [isLocalHost, setIsLocalHost] = useState(false);
+  const captchaRef = useRef<HCaptcha>(null);
+  const validationSchema = useMemo(
+    () => createContactUsSchema(!isLocalHost),
+    [isLocalHost],
+  );
+
+  useEffect(() => {
+    setIsLocalHost(isLocalHostname(window.location.hostname));
+  }, []);
+
   return (
     <Formik
       initialValues={{
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        "h-captcha-response": "",
       }}
-      validationSchema={ContactUsSchema}
-      onSubmit={(values, { resetForm }) => {
-        const message = submitContactForm(values);
-        toast.success(message);
-        resetForm();
+      validationSchema={validationSchema}
+      onSubmit={async (values, { resetForm, setFieldValue }) => {
+        const result = await submitContactForm(values);
+        if (result.success) {
+          toast.success(result.message);
+          resetForm();
+        } else {
+          toast.error(result.message);
+        }
+        captchaRef.current?.resetCaptcha();
+        setFieldValue("h-captcha-response", "", false);
       }}
     >
       {({
@@ -66,6 +96,7 @@ export function Form() {
         handleBlur,
         isSubmitting,
         handleSubmit,
+        setFieldValue,
       }) => (
         <form
           onSubmit={handleSubmit}
@@ -83,14 +114,14 @@ export function Form() {
               icon={<FaUser />}
               className={cn(
                 fieldCommonClasses,
-                errors.name && touched.name && errorClasses
+                errors.name && touched.name && errorClasses,
               )}
             />
             {errors.name && touched.name && (
               <p
                 title={errors.name}
                 aria-live="polite"
-                role="error message"
+                role="alert"
                 className={errorMessageClasses}
               >
                 {errors.name}
@@ -109,14 +140,14 @@ export function Form() {
               icon={<SendIcon />}
               className={cn(
                 fieldCommonClasses,
-                errors.email && touched.email && errorClasses
+                errors.email && touched.email && errorClasses,
               )}
             />
             {errors.email && touched.email && (
               <p
                 title={errors.email}
                 aria-live="polite"
-                role="error message"
+                role="alert"
                 className={errorMessageClasses}
               >
                 {errors.email}
@@ -128,6 +159,7 @@ export function Form() {
               placeholder="Subject"
               type="text"
               name="subject"
+              id="subject"
               value={values.subject}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -135,14 +167,14 @@ export function Form() {
               icon={<FaSpeakap />}
               className={cn(
                 fieldCommonClasses,
-                errors.subject && touched.subject && errorClasses
+                errors.subject && touched.subject && errorClasses,
               )}
             />
             {errors.subject && touched.subject && (
               <p
                 title={errors.subject}
                 aria-live="polite"
-                role="error message"
+                role="alert"
                 className={errorMessageClasses}
               >
                 {errors.subject}
@@ -160,23 +192,46 @@ export function Form() {
               icon={<MessageIcon />}
               className={cn(
                 fieldCommonClasses,
-                errors.message && touched.message && errorClasses
+                errors.message && touched.message && errorClasses,
               )}
             />
             {errors.message && touched.message && (
               <p
                 title={errors.message}
                 aria-live="polite"
-                role="error message"
+                role="alert"
                 className={errorMessageClasses}
               >
                 {errors.message}
               </p>
             )}
           </div>
+          {!isLocalHost && (
+            <div className="lg:col-span-2">
+              <HCaptcha
+                ref={captchaRef}
+                sitekey={hCaptchaSiteKey}
+                reCaptchaCompat={false}
+                onVerify={(token) => setFieldValue("h-captcha-response", token)}
+                onExpire={() => setFieldValue("h-captcha-response", "")}
+                onError={() => setFieldValue("h-captcha-response", "")}
+              />
+              {errors["h-captcha-response"] &&
+                touched["h-captcha-response"] && (
+                  <p
+                    title={errors["h-captcha-response"]}
+                    aria-live="polite"
+                    role="alert"
+                    className="mt-1 text-red-500"
+                  >
+                    {errors["h-captcha-response"]}
+                  </p>
+                )}
+            </div>
+          )}
           <div className="lg:col-span-2">
             <Button type="submit" className="w-full" disabled={isSubmitting}>
-              <span>SEND NOW</span>
+              <span>{isSubmitting ? "SENDING..." : "SEND NOW"}</span>
             </Button>
           </div>
         </form>

@@ -11,7 +11,7 @@ A modern, responsive website for Moshate Consulting (Pty) Ltd - an ICT and Manag
 - **Icons:** React Icons, Lucide React
 - **Animations:** AOS (Animate On Scroll)
 - **Forms:** Formik
-- **Email:** Nodemailer
+- **Contact form:** [Web3Forms](https://web3forms.com)
 
 ## Getting Started
 
@@ -31,6 +31,14 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the website.
+
+### Contact form setup
+
+1. Create a free account at [web3forms.com](https://web3forms.com) and copy your access key.
+2. Copy `.env.example` to `.env.local` and set `WEB3FORMS_ACCESS_KEY`.
+3. In the Web3Forms dashboard, add your production domain (and `localhost` for local testing).
+4. Enable hCaptcha spam protection in the Web3Forms dashboard.
+5. Set the notification email to `admin@moshateconsulting.co.za` (or your preferred inbox).
 
 ## Project Structure
 
