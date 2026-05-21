@@ -35,10 +35,12 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 ### Contact form setup
 
 1. Create a free account at [web3forms.com](https://web3forms.com) and copy your access key.
-2. Copy `.env.example` to `.env.local` and set `WEB3FORMS_ACCESS_KEY`.
-3. In the Web3Forms dashboard, add your production domain (and `localhost` for local testing).
+2. Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`.
+3. In the Web3Forms dashboard, add your production domain to restrict submissions.
 4. Enable hCaptcha spam protection in the Web3Forms dashboard.
 5. Set the notification email to `admin@moshateconsulting.co.za` (or your preferred inbox).
+
+For Azure Static Web Apps, add `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` as a GitHub Actions repository secret. The workflow passes it into `npm run build`.
 
 ## Project Structure
 
