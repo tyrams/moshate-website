@@ -19,6 +19,16 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Check deployment token
+        env:
+          SWA_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_SEA_0D566DB10 }}
+        run: |
+          if [ -z "$SWA_TOKEN" ]; then
+            echo "TOKEN IS EMPTY"
+            exit 1
+          else
+            echo "TOKEN IS AVAILABLE"
+          fi
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
