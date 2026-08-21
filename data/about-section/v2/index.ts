@@ -9,7 +9,7 @@ export const aboutSectionData: AboutSectionProps = {
   },
   aboutUsPoints: [
     "Honesty, Excellence and Respect",
-    "Ubuntu-driven Company Culture",
+    "Botho-driven Company Culture",
     "Highly Skilled Teams",
     "Public & Private Sector Experience",
     "Revenue Management & Public Safety",

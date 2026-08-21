@@ -40,7 +40,7 @@ Moshate Consulting Services is a leading IT consulting firm specialising in deli
 
 Our mission is to empower businesses with the tools and strategies needed to thrive in today's fast-paced digital landscape. By combining technical expertise with industry insights, we help organizations harness the power of technology to achieve their objectives and stay ahead of the competition.
 
-Our company is founded on values of honesty, excellence and respect. Ubuntu drives our company culture in that we are because of our client. We believe in providing the best value to our clients by utilizing highly skilled teams that will drive excellence, high performance, and quality in the services we offer.
+Our company is founded on values of honesty, excellence and respect. Botho drives our company culture in that we are because of our client. We believe in providing the best value to our clients by utilizing highly skilled teams that will drive excellence, high performance, and quality in the services we offer.
 
 Moshate partners with organisations small and large to collaborate and co-create fit-for-purpose solutions to deliver value to all stakeholders involved. The use of digital technology tools and leading practices to solve business problems is critical to our delivery capability.
 

@@ -66,7 +66,7 @@ export function AboutSection() {
                   <FaCircleCheck />
                 </span>
                 <span className="block font-secondary text-md font-bold leading-[1.5] text-accent-900 dark:text-white">
-                  Ubuntu-driven Company Culture
+                  Botho-driven Company Culture
                 </span>
               </li>
               <li className="flex items-center gap-3 lg:gap-4">

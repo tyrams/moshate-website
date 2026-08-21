@@ -44,7 +44,7 @@ export function ValuesSection() {
             </p>
             <p className="mt-5">
               At the heart of our culture is the principle of{" "}
-              <span className="font-semibold text-primary">Ubuntu</span> — "I am
+              <span className="font-semibold text-primary">Botho</span> — "I am
               because we are." We believe our success is intrinsically linked to
               the success of our clients and communities. This philosophy shapes
               how we collaborate, communicate, and deliver value.
