@@ -4,7 +4,7 @@ export const heroData: HeroProps = {
   items: [
     {
       image: {
-        src: "/assets/images/hero/hero-1.jpg",
+        src: "/assets/images/hero/hero-1.webp",
         alt: "hero 1",
       },
       title: "Innovative Business Management and Digital Solutions",
@@ -15,7 +15,7 @@ export const heroData: HeroProps = {
     },
     {
       image: {
-        src: "/assets/images/black-businesswoman-shaking-hands-with-male-partner.jpg",
+        src: "/assets/images/black-businesswoman-shaking-hands-with-male-partner.webp",
         alt: "hero 2",
       },
       title: "Your Partner in Sustainable Growth",
@@ -26,7 +26,7 @@ export const heroData: HeroProps = {
     },
     {
       image: {
-        src: "/assets/images/three-serious-partners-watching-presentation-digital-tablet.jpg",
+        src: "/assets/images/three-serious-partners-watching-presentation-digital-tablet.webp",
         alt: "hero 3",
       },
       title: "Streamline. Simplify. Sustain.",

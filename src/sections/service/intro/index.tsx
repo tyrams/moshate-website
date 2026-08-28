@@ -61,7 +61,7 @@ export function ServiceIntroSection({ className }: { className?: string }) {
             <div className="rounded-[18px] border border-secondary/20 bg-gradient-to-br from-secondary/10 via-white to-primary/10 p-2 shadow-lg dark:border-white/10 dark:from-secondary/10 dark:via-accent-950 dark:to-primary/10">
               <div className="group relative aspect-[4/3] overflow-hidden rounded-[12px] border border-white/60 shadow-xl dark:border-white/10">
                 <Image
-                  src="/assets/images/hand-with-support-gears-isolated - Operational Excellence.jpg"
+                  src="/assets/images/hand-with-support-gears-isolated - Operational Excellence.webp"
                   alt="Operational Excellence - Moshate Consulting Services"
                   fill
                   sizes="(max-width: 1024px) 100vw, 44vw"

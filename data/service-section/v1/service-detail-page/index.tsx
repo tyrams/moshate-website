@@ -25,7 +25,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Business Model Innovation",
       "Design Thinking Workshops",
     ],
-    imageSrc: "/assets/images/businessman-colleague-shaking-hands.jpg",
+    imageSrc: "/assets/images/businessman-colleague-shaking-hands.webp",
     imageAlt: "Strategy and operating model design",
   },
   {
@@ -53,7 +53,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Digital Enablement Programmes",
     ],
     imageSrc:
-      "/assets/images/black-businesswoman-shaking-hands-with-male-partner.jpg",
+      "/assets/images/black-businesswoman-shaking-hands-with-male-partner.webp",
     imageAlt: "Digital transformation and enterprise enablement",
   },
   {
@@ -80,7 +80,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Governance & Reporting Frameworks",
       "Compliance Projects (e.g., POPIA, Business Continuity)",
     ],
-    imageSrc: "/assets/images/businessman-colleague-shaking-hands.jpg",
+    imageSrc: "/assets/images/businessman-colleague-shaking-hands.webp",
     imageAlt: "Project, programme and PMO services",
   },
   {
@@ -107,7 +107,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Service Delivery Improvement",
     ],
     imageSrc:
-      "/assets/images/standard-quality-control-concept-m - Operational Excellence.jpg",
+      "/assets/images/standard-quality-control-concept-m - Operational Excellence.webp",
     imageAlt: "Operational excellence and continuous improvement",
   },
   {
@@ -135,7 +135,7 @@ export const serviceDetailPageData: ServiceContentProps[] = [
       "Short- to Long-Term Augmentation",
     ],
     imageSrc:
-      "/assets/images/three-serious-partners-watching-presentation-digital-tablet.jpg",
+      "/assets/images/three-serious-partners-watching-presentation-digital-tablet.webp",
     imageAlt: "Specialist resourcing and capacity support",
   },
 ];

@@ -21,7 +21,7 @@ export function HeroSection({ title, breadcrumbItems }: HeroSectionProps) {
       {/* Background image — z-0 so it sits at the base of this stacking context */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/images/hero/banner-top.jpg"
+          src="/assets/images/hero/banner-top.webp"
           alt="Hero background"
           fill
           priority

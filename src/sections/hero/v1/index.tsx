@@ -15,7 +15,7 @@ import { Swiper as SwiperType, Navigation, Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 SwiperCore.use([EffectFade, Navigation, Autoplay]);
@@ -36,6 +36,15 @@ export interface HeroProps {
 export function Hero() {
   const swiperRef = useRef<SwiperType>();
   const { items } = heroData;
+  const [loadedImageIndexes, setLoadedImageIndexes] = useState(() => new Set([0]));
+
+  const loadSlideImage = (index: number) => {
+    setLoadedImageIndexes((loadedIndexes) => {
+      if (loadedIndexes.has(index)) return loadedIndexes;
+      return new Set(loadedIndexes).add(index);
+    });
+  };
+
   return (
     <section className={cn("bg-accent-900", styles["hero"])}>
       {items && items.length > 0 && (
@@ -48,6 +57,7 @@ export function Hero() {
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
           }}
+          onSlideChange={(swiper) => loadSlideImage(swiper.realIndex)}
         >
           {items.map((item, index) => (
             <SwiperSlide key={index}>
@@ -59,13 +69,18 @@ export function Hero() {
                 {/* Shapes  */}
                 <Shapes />
 
-                <div
-                  className={cn(
-                    "absolute inset-0 -z-1 bg-cover bg-no-repeat [background-position:top_center] [transform:scale(1)]",
-                    styles["hero-bg"],
-                  )}
-                  style={{ backgroundImage: `url(${item.image.src})` }}
-                />
+                {loadedImageIndexes.has(index) && (
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute inset-0 -z-1 h-full w-full object-cover object-top [transform:scale(1)]",
+                      styles["hero-bg"],
+                    )}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    src={item.image.src}
+                  />
+                )}
 
                 <Container>
                   {/* Main content  */}

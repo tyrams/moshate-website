@@ -19,7 +19,7 @@ export function ServiceDetailsSection({
   const keyOfferings = service?.keyOfferings || [];
   const deliveryFocus = service?.deliveryFocus || [];
   const imageSrc =
-    service?.imageSrc || "/assets/images/Strategy in Action - pictures.jpg";
+    service?.imageSrc || "/assets/images/Strategy in Action - pictures.webp";
   const imageAlt = service?.imageAlt || `${title} service image`;
 
   return (

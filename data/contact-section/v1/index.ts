@@ -6,7 +6,7 @@ export const contactSectionData: ContactSectionProps = {
     title: "Let Us Be Your Partner in Success",
   },
   image: {
-    src: "/assets/images/Homepage - picture 3.jpg",
+    src: "/assets/images/Homepage - picture 3.webp",
     alt: "contact section background image",
   },
 };

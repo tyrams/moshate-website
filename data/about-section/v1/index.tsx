@@ -34,25 +34,25 @@ function Icon2() {
 export const aboutSectionData: AboutSectionProps = {
   images: {
     image1: {
-      src: "/assets/images/homepage - 4 Pictures 2.jpg",
+      src: "/assets/images/homepage - 4 Pictures 2.webp",
       alt: "Moshate Consulting Team",
       width: 195,
       height: 132,
     },
     image2: {
-      src: "/assets/images/Homepage - 4 pictures.jpg",
+      src: "/assets/images/Homepage - 4 pictures.webp",
       alt: "Moshate Consulting Services",
       width: 312,
       height: 304,
     },
     image3: {
-      src: "/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.jpg",
+      src: "/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.webp",
       alt: "Moshate Consulting Solutions",
       width: 250,
       height: 265,
     },
     image4: {
-      src: "/assets/images/Resource augmation.jpg",
+      src: "/assets/images/Resource augmation.webp",
       alt: "Moshate Consulting Partnership",
       width: 250,
       height: 265,

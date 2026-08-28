@@ -17,7 +17,7 @@ export function ValuesSection() {
             <div className="group relative">
               <div className="relative overflow-hidden rounded-tr-[60px] rounded-bl-[60px] shadow-2xl">
                 <Image
-                  src="/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.jpg"
+                  src="/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.webp"
                   alt="Moshate Consulting team values"
                   width={600}
                   height={500}

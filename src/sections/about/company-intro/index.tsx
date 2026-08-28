@@ -40,7 +40,7 @@ export function CompanyIntroSection() {
             <div className="group relative">
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 <Image
-                  src="/assets/images/serious-diverse-business-colleagues-discussing-project - Partnership.jpg"
+                  src="/assets/images/serious-diverse-business-colleagues-discussing-project - Partnership.webp"
                   alt="Moshate Consulting partnership"
                   width={640}
                   height={480}

@@ -29,7 +29,7 @@ export function OurStorySection() {
                 >
                   <div className="relative aspect-square">
                     <Image
-                      src="/assets/images/Resource augmation.jpg"
+                      src="/assets/images/Resource augmation.webp"
                       alt="Moshate Consulting partnership and collaboration"
                       fill
                       className="object-cover transition-all duration-700 group-hover:scale-[1.08]"

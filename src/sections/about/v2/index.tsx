@@ -28,7 +28,7 @@ export function AboutSection() {
               {/* Image */}
               <div className="relative overflow-hidden">
                 <Image
-                  src="/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.jpg"
+                  src="/assets/images/entrepreneurs-shaking-hands-solar-panel-manufacturing-plant-after-reaching-agreement.webp"
                   alt="about image five"
                   width={640}
                   height={678}
